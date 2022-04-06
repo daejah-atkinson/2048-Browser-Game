@@ -6,20 +6,28 @@ console.log("hello world")
 // We need our gameboard to create 16 total cells, that are 4x4
 //Code to create grid using javascript instead of css courtesy of https://code-boxx.com/create-grid-javascript/
 
+let cells = [];
+
 function createGameboard (){
     for (let i=0; i < 16; i++){
         let container = document.getElementById('gameboard');
         let cell = document.createElement('div');
-        cell.innerHTML = "text"
+        cells.push(cell);
+        cell.innerHTML = 0
         container.appendChild(cell)    
     }
 } createGameboard ();
 
 //2. Game board starts out with two number 2 tiles
 //Create a function that randomly generates the number 2 on the board.
+//This function needs to randomly generate a positioning on the board (Number between1-16). It need to determine if that position is open (not already containing a number) If that position is open it need to place a number 2 tile.
 function randomGenerate() {
+    let position = Math.floor(Math.random()* 16)
     
 }
+
+console.log(cells)
+
 
 
 //3. Player uses the arrow keys to slide the tiles on the board
