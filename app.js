@@ -3,14 +3,9 @@ console.log("hello world")
 //GAMEPLAY PSEUDOCODE
 
 //1. Game boared is composed of 16 tiles that are aligned 4x4.
+// We need our gameboard to create 16 total cells, that are 4x4
 //Code to create grid using javascript instead of css courtesy of https://code-boxx.com/create-grid-javascript/
 
-// let container = document.getElementById('gameboard');
-// let cell = document.createElement('div');
-// cell.innerHTML = "text"
-// container.appendChild(cell)
-
-// We need our gameboard to create 16 total cells, that are 4x4
 function createGameboard (){
     for (let i=0; i < 16; i++){
         let container = document.getElementById('gameboard');
@@ -21,6 +16,12 @@ function createGameboard (){
 } createGameboard ();
 
 //2. Game board starts out with two number 2 tiles
+//Create a function that randomly generates the number 2 on the board.
+function randomGenerate() {
+    
+}
+
+
 //3. Player uses the arrow keys to slide the tiles on the board
     // Up arrow --> slides tiles up
     // Down arrow --> slides tiles down
