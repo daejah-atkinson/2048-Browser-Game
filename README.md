@@ -14,7 +14,7 @@
 
 <h2> User Story </h2>
 <p> <ul>
-  <li> As a user, I want to be able to slide the tiles with my mouse. </li>
+  <li> As a user, I want to be able to slide the tiles using the arrow keys. </li>
   <li> As a user, I want the two tiles with the same number, when slid together, to automatically combine revealing a new tile with their sum.</li>
   <li> As a user, I want to know when I've won the game by creating tile 2048.</li>
   <li> As a user, I want to know when I've lost the game when the board is full.</li>
