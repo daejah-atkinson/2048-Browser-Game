@@ -12,21 +12,30 @@ function createGameboard (){
     for (let i=0; i < 16; i++){
         let container = document.getElementById('gameboard');
         let cell = document.createElement('div');
-        cells.push(cell);
         cell.innerHTML = 0
-        container.appendChild(cell)    
+        container.appendChild(cell)
+        cells.push(cell);    
     }
-} createGameboard ();
+    
+} 
+createGameboard ();
 
 //2. Game board starts out with two number 2 tiles
 //Create a function that randomly generates the number 2 on the board.
 //This function needs to randomly generate a positioning on the board (Number between1-16). It need to determine if that position is open (not already containing a number) If that position is open it need to place a number 2 tile.
 function randomGenerate() {
-    let position = Math.floor(Math.random()* 16)
+    let position = Math.floor(Math.random()* 16);
+    console.log(position)
+    // for (let i=0; i < cells.length; i++) {
+        if(cells[position].innerHTML == 0){
+            cells[position].innerHTML = 2
+        // } 
+    } 
     
 }
 
-console.log(cells)
+randomGenerate();
+
 
 
 
