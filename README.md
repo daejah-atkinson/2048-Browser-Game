@@ -2,7 +2,7 @@
 
 <h2>Project Description</h2>
 
-<p> 2048 is a single player game where you combine numbered tiles on a game board to create a tile with the sum of the two numbers slid together. Keep combining the tiles until you create a tile totaling 2048, once you've done this you win. If you fill the entire game board and can no longer slide tiles together, you lose. </p>
+<p> 2048 is a single player game where you combine numbered tiles on a game board to create a tile with the sum of the two numbers that were slid together. Keep combining the tiles until you create a tile totaling 2048, once you've done this you win. If you fill the entire game board and can no longer slide tiles together, you lose. </p>
 
 <h2> Wire Frames </h2>
 
