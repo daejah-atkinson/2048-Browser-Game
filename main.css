@@ -1,5 +1,5 @@
 .top-section {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     height: 200px;
     width: 100%;
     display: flex;
@@ -9,44 +9,53 @@
 h1 {
     display: flex;
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
-    color: #505050;
+    color: #2b4353;
     font-family: 'Rubik', sans-serif;
     font-size: 100px;
+    margin-left: 125px;
 }
 
 .score {
-    background-color: #AE8768;
+    background-color:#a2a8d3;
+    border: 3px solid #38598b;
     color: white;
-    width: 100px;
+    width: 120px;
     height: 100px;
     justify-content: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
+    font-family: 'Rubik', sans-serif;
+    margin-right: 50px;
+    margin-top: 10px;
 }
 
 body {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     width: 100%;
     margin: auto;
+    background-color: #ececec;
 }
 
 #gameboard {
-    background-color: #E5BC9C;
-    width: 410px;
-    height: 410px;
+    background-color: #e7eaf6;
+    width: 412px;
+    height: 412px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    border: 1px solid #2b4353;
 }
 
 #gameboard > div {
     width: 100px;
     height: 100px;
-    border: 1px solid #AE8768;
+    border: 1.5px solid #2b4353;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 30px;
+    font-family: 'Rubik', sans-serif;
 }

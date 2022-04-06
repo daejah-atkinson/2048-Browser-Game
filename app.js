@@ -1,5 +1,3 @@
-console.log("hello world")
-
 //GAMEPLAY PSEUDOCODE
 
 //1. Game boared is composed of 16 tiles that are aligned 4x4.
@@ -30,13 +28,11 @@ function randomGenerate() {
         if(cells[position].innerHTML == 0){
             cells[position].innerHTML = 2
         // } 
-    } 
-    
+    }    
 }
-
+//In order for two number 2 tiles to start on the board function is invoked twice
 randomGenerate();
-
-
+randomGenerate();
 
 
 //3. Player uses the arrow keys to slide the tiles on the board
