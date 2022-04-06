@@ -2,7 +2,16 @@ console.log("hello world")
 
 //GAMEPLAY PSEUDOCODE
 
-//1. Game board starts out with two number 2 tiles
-//2. Player uses the arrow keys to slide the tiles on the board
-//3. If two matching tiles are slide together they combine to create a single new tiles with the sum of the two numbers combined
-//4. This continues until player reaches tile 2048 or until the game board is full and no more moves can be made
+//1. Game boared is composed of 16 tiles that are aligned 4x4.
+//2. Game board starts out with two number 2 tiles
+//3. Player uses the arrow keys to slide the tiles on the board
+    // Up arrow --> slides tiles up
+    // Down arrow --> slides tiles down
+    //Left arrow --> slides tiles to the left
+    //Right arrow --> slides tiles to the right
+//4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
+    // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.
+//5. This continues until player reaches tile 2048 
+    //If the player reaches tile 2048 the game stops and winning message pops up
+//6. When game board is full and no more moves can be made
+    //if the gameboard is full and no more moves can be made loosing message appears
