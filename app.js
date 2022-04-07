@@ -40,6 +40,18 @@ randomGenerate();
     //Right arrow --> slides tiles to the right (keycode: 39)
 
 //Function currently only logging the key press and not moving the tiles 
+
+//Hard coding columns because the indexes are varying
+    let columnOne = [cells[0], cells [4], cells[8], cells[12]];
+    let columnTwo = [cells[1], cells [5], cells[9], cells[13]];
+    let columnThree = [cells[2], cells [6], cells[10], cells[14]];
+    let columnFour = [cells[3], cells [7], cells[11], cells[15]];
+    console.log(columnOne);
+    console.log(columnTwo);
+    console.log(columnThree);
+    console.log(columnFour);
+
+
     function slideUp () {
         document.addEventListener('keydown', up);
         function up (event) {
@@ -83,7 +95,7 @@ randomGenerate();
     let rowThree = [];
     let rowFour = [];
 
-    function right (){
+    function row (){
         for(let i=0; i <cells.length; i++) {
             if (i <= 3){
                 rowOne.push(cells[i])
@@ -95,12 +107,9 @@ randomGenerate();
                 rowFour.push(cells[i])
             }     
         } 
-    } right ()
+    } row ()
 
-    console.log(rowOne)
-    console.log(rowTwo)
-    console.log(rowThree)
-    console.log(rowFour)
+    
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
     // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.
