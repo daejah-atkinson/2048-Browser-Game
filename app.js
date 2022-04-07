@@ -13,8 +13,7 @@ function createGameboard (){
         cell.innerHTML = 0
         container.appendChild(cell)
         cells.push(cell);    
-    }
-    
+    } 
 } 
 createGameboard ();
 
@@ -23,7 +22,6 @@ createGameboard ();
 //This function needs to randomly generate a positioning on the board (Number between1-16). It need to determine if that position is open (not already containing a number) If that position is open it need to place a number 2 tile.
 function randomGenerate() {
     let position = Math.floor(Math.random()* 16);
-    console.log(position)
     // for (let i=0; i < cells.length; i++) {
         if(cells[position].innerHTML == 0){
             cells[position].innerHTML = 2
@@ -41,8 +39,7 @@ randomGenerate();
     //Left arrow --> slides tiles to the left (keycode: 37)
     //Right arrow --> slides tiles to the right (keycode: 39)
 
-
-
+//Function currently only logging the key press and not moving the tiles 
     function slideUp () {
         document.addEventListener('keydown', up);
         function up (event) {
@@ -71,19 +68,48 @@ randomGenerate();
         
     } slideLeft ();
 
+    //In order for the tiles to move to the right with key press in the cells array cell[i] need to +1 until it reaches the end of the row [3], [7], [11], [15]
+
     function slideRight () {
         document.addEventListener('keydown', right);
         function right (event) {
              if (event.keyCode === 39) 
                     console.log('right')        
-        }
-        
+        }    
     } slideRight ();
 
-  
+    let rowOne = [];
+    let rowTwo = [];
+    let rowThree = [];
+    let rowFour = [];
+
+    function right (){
+        for(let i=0; i <cells.length; i++) {
+            if (i <= 3){
+                rowOne.push(cells[i])
+            } if (i <= 7 && i >=4) {
+                rowTwo.push(cells[i])
+            } if (i <=11 && i >= 8){
+                rowThree.push(cells[i])
+            } if (i <=15 && i >=12) {
+                rowFour.push(cells[i])
+            }     
+        } 
+    } right ()
+
+    console.log(rowOne)
+    console.log(rowTwo)
+    console.log(rowThree)
+    console.log(rowFour)
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
     // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.
+    function combineTiles () {
+        //if the tile to the right of the tile in the row is the same number that
+    }
+   
+
+
 //5. This continues until player reaches tile 2048 
     //If the player reaches tile 2048 the game stops and winning message pops up
 //6. When game board is full and no more moves can be made
