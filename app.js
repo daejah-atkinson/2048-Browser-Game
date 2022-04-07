@@ -99,14 +99,137 @@ function hideZero (){
         } 
     } row ()
 
-    function slideLeft () {
-        document.addEventListener('keydown', left);
-        function left (event) {
-             if (event.keyCode === 37) 
-                    console.log('left')        
+    //SLIDE LEFT FUNCTION AT LEFT ARROW KEY
+
+    document.addEventListener('keydown', keyLeft)
+
+    function keyLeft (event){
+        if (event.keyCode === 37){
+            slideLeft ();
+            randomGenerate ();
         }
+    }
+
+    function slideLeft1 (){
+        for (let i=0; i < rowOne.length; i++) {
+           if (rowOne[0].innerHTML == 0){
+               rowOne[0].innerHTML = rowOne[1].innerHTML;
+               rowOne[1].innerHTML = 0;
+               if (rowOne[0].innerHTML !=0 || rowOne[0].innerHTML != undefined){
+                   rowOne[0].classList.remove('hidden')
+               }
+            } 
+            if (rowOne[1].innerHTML == 0) {
+                rowOne[1].innerHTML = rowOne[2].innerHTML;
+                rowOne[2].innerHTML = 0;
+                if (rowOne[1].innerHTML !=0 || rowOne[1].innerHTML !=undefined){
+                    rowOne[1].classList.remove('hidden')
+                }
+            }
+            if (rowOne[2].innerHTML == 0) {
+                rowOne[2].innerHTML = rowOne[3].innerHTML;
+                rowOne[3].innerHTML = 0;
+                if (rowOne[2].innerHTML !=0 || rowOne[2].innerHTML !=undefined){
+                    rowOne[2].classList.remove('hidden')
+                }
+            }  if (rowOne[3].innerHTML == 0 || rowOne[3].innerHTML ==undefined) {
+                    hideZero ()
+            } 
+            }
+        } 
+    
+        function slideLeft2 (){
+            for (let i=0; i < rowTwo.length; i++) {
+               if (rowTwo[0].innerHTML == 0){
+                   rowTwo[0].innerHTML = rowTwo[1].innerHTML;
+                   rowTwo[1].innerHTML = 0;
+                   if (rowTwo[0].innerHTML !=0 || rowTwo[0].innerHTML != undefined){
+                       rowTwo[0].classList.remove('hidden')
+                   }
+                } 
+                if (rowTwo[1].innerHTML == 0) {
+                    rowTwo[1].innerHTML = rowTwo[2].innerHTML;
+                    rowTwo[2].innerHTML = 0;
+                    if (rowTwo[1].innerHTML !=0 || rowTwo[1].innerHTML !=undefined){
+                        rowTwo[1].classList.remove('hidden')
+                    }
+                }
+                if (rowTwo[2].innerHTML == 0) {
+                    rowTwo[2].innerHTML = rowTwo[3].innerHTML;
+                    rowTwo[3].innerHTML = 0;
+                    if (rowTwo[2].innerHTML !=0 || rowTwo[2].innerHTML !=undefined){
+                        rowTwo[2].classList.remove('hidden')
+                    }
+                }  if (rowTwo[3].innerHTML == 0 || rowTwo[3].innerHTML ==undefined) {
+                        hideZero ()
+                } 
+                }
+            } 
         
-    } slideLeft ();
+            function slideLeft3 (){
+                for (let i=0; i < rowThree.length; i++) {
+                   if (rowThree[0].innerHTML == 0){
+                       rowThree[0].innerHTML = rowThree[1].innerHTML;
+                       rowThree[1].innerHTML = 0;
+                       if (rowThree[0].innerHTML !=0 || rowThree[0].innerHTML != undefined){
+                           rowThree[0].classList.remove('hidden')
+                       }
+                    } 
+                    if (rowThree[1].innerHTML == 0) {
+                        rowThree[1].innerHTML = rowThree[2].innerHTML;
+                        rowThree[2].innerHTML = 0;
+                        if (rowThree[1].innerHTML !=0 || rowThree[1].innerHTML !=undefined){
+                            rowThree[1].classList.remove('hidden')
+                        }
+                    }
+                    if (rowThree[2].innerHTML == 0) {
+                        rowThree[2].innerHTML = rowThree[3].innerHTML;
+                        rowThree[3].innerHTML = 0;
+                        if (rowThree[2].innerHTML !=0 || rowThree[2].innerHTML !=undefined){
+                            rowThree[2].classList.remove('hidden')
+                        }
+                    }  if (rowThree[3].innerHTML == 0 || rowThree[3].innerHTML ==undefined) {
+                            hideZero ()
+                    } 
+                    }
+                } 
+            
+                function slideLeft4 (){
+                    for (let i=0; i < rowFour.length; i++) {
+                       if (rowFour[0].innerHTML == 0){
+                           rowFour[0].innerHTML = rowFour[1].innerHTML;
+                           rowFour[1].innerHTML = 0;
+                           if (rowFour[0].innerHTML !=0 || rowFour[0].innerHTML != undefined){
+                               rowFour[0].classList.remove('hidden')
+                           }
+                        } 
+                        if (rowFour[1].innerHTML == 0) {
+                            rowFour[1].innerHTML = rowFour[2].innerHTML;
+                            rowFour[2].innerHTML = 0;
+                            if (rowFour[1].innerHTML !=0 || rowFour[1].innerHTML !=undefined){
+                                rowFour[1].classList.remove('hidden')
+                            }
+                        }
+                        if (rowFour[2].innerHTML == 0) {
+                            rowFour[2].innerHTML = rowFour[3].innerHTML;
+                            rowFour[3].innerHTML = 0;
+                            if (rowFour[2].innerHTML !=0 || rowFour[2].innerHTML !=undefined){
+                                rowFour[2].classList.remove('hidden')
+                            }
+                        }  if (rowFour[3].innerHTML == 0 || rowFour[3].innerHTML ==undefined) {
+                                hideZero ()
+                        } 
+                        }
+                    } 
+                
+                      
+        
+    function slideLeft (){
+        slideLeft1 ();
+        slideLeft2 ();  
+        slideLeft3 ();
+        slideLeft4 ();
+    }
 
     //In order for the tiles to move to the right with key press in the cells array cell[i] need to +1 until it reaches the end of the row [3], [7], [11], [15]
 
@@ -116,7 +239,6 @@ function hideZero (){
 
     function keyRight (event) {
     if (event.keyCode === 39) {
-        console.log('right')   
         slideRight ();
         randomGenerate ();     
         }  
