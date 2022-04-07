@@ -36,10 +36,41 @@ randomGenerate();
 
 
 //3. Player uses the arrow keys to slide the tiles on the board
-    // Up arrow --> slides tiles up
-    // Down arrow --> slides tiles down
-    //Left arrow --> slides tiles to the left
-    //Right arrow --> slides tiles to the right
+    // Up arrow --> slides tiles up (keycode: 38)
+    // Down arrow --> slides tiles down (keycode: 40)
+    //Left arrow --> slides tiles to the left (keycode: 37)
+    //Right arrow --> slides tiles to the right (keycode: 39)
+
+
+    function log (){
+        console.log("up")
+    }
+    document.addEventListener('keydown', log)
+
+    // function slideUp () {
+    //     document.addEventListener('keydown', event => {
+    //         if (event.keyCode === 38) {
+    //             console.log('up')
+    //         }
+    //     })
+    // }
+
+    function slideDown () {
+        
+    }
+
+    function slideLeft () {
+        document.addEventListener('keydown', event => {
+            
+        })
+    }
+
+    function slideRight () {
+        document.addEventListener('keydown', event => {
+            
+        })
+    }
+
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
     // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.
 //5. This continues until player reaches tile 2048 
