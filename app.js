@@ -42,34 +42,45 @@ randomGenerate();
     //Right arrow --> slides tiles to the right (keycode: 39)
 
 
-    function log (){
-        console.log("up")
-    }
-    document.addEventListener('keydown', log)
 
-    // function slideUp () {
-    //     document.addEventListener('keydown', event => {
-    //         if (event.keyCode === 38) {
-    //             console.log('up')
-    //         }
-    //     })
-    // }
+    function slideUp () {
+        document.addEventListener('keydown', up);
+        function up (event) {
+             if (event.keyCode === 38) 
+                    console.log('up')        
+        }
+
+    } slideUp ();
+    
 
     function slideDown () {
+        document.addEventListener('keydown', down);
+        function down (event) {
+             if (event.keyCode === 40) 
+                    console.log('down')        
+        }
         
-    }
+    } slideDown ();
 
     function slideLeft () {
-        document.addEventListener('keydown', event => {
-            
-        })
-    }
+        document.addEventListener('keydown', left);
+        function left (event) {
+             if (event.keyCode === 37) 
+                    console.log('left')        
+        }
+        
+    } slideLeft ();
 
     function slideRight () {
-        document.addEventListener('keydown', event => {
-            
-        })
-    }
+        document.addEventListener('keydown', right);
+        function right (event) {
+             if (event.keyCode === 39) 
+                    console.log('right')        
+        }
+        
+    } slideRight ();
+
+  
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
     // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.
