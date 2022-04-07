@@ -33,6 +33,15 @@ randomGenerate();
 randomGenerate();
 
 
+//Hide zeros
+function hideZero (){
+    for (let i=0; i < cells.length; i++){
+        if (cells[i].innerHTML == 0){
+            cells[i].classList.add('hidden')
+        }
+    }
+} hideZero ()
+
 //3. Player uses the arrow keys to slide the tiles on the board
     // Up arrow --> slides tiles up (keycode: 38)
     // Down arrow --> slides tiles down (keycode: 40)
@@ -46,10 +55,7 @@ randomGenerate();
     let columnTwo = [cells[1], cells [5], cells[9], cells[13]];
     let columnThree = [cells[2], cells [6], cells[10], cells[14]];
     let columnFour = [cells[3], cells [7], cells[11], cells[15]];
-    console.log(columnOne);
-    console.log(columnTwo);
-    console.log(columnThree);
-    console.log(columnFour);
+
 
 
     function slideUp () {
