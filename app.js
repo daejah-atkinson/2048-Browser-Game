@@ -140,7 +140,7 @@ function hideZero (){
             }
         }  if (rowOne[0].innerHTML == 0 || rowOne[0].innerHTML ==undefined) {
             
-        }
+        } hideZero ()
     } 
  
     
