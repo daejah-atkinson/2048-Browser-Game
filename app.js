@@ -36,7 +36,7 @@ randomGenerate();
 //Hide zeros
 function hideZero (){
     for (let i=0; i < cells.length; i++){
-        if (cells[i].innerHTML == 0){
+        if (cells[i].innerHTML == 0 || cells[i].innerHTML == undefined){
             cells[i].classList.add('hidden')
         }
     }
@@ -48,15 +48,13 @@ function hideZero (){
     //Left arrow --> slides tiles to the left (keycode: 37)
     //Right arrow --> slides tiles to the right (keycode: 39)
 
-//Function currently only logging the key press and not moving the tiles 
 
+//Moving COLUMN ITEMS
 //Hard coding columns because the indexes are varying
     let columnOne = [cells[0], cells [4], cells[8], cells[12]];
     let columnTwo = [cells[1], cells [5], cells[9], cells[13]];
     let columnThree = [cells[2], cells [6], cells[10], cells[14]];
     let columnFour = [cells[3], cells [7], cells[11], cells[15]];
-
-
 
     function slideUp () {
         document.addEventListener('keydown', up);
@@ -77,24 +75,7 @@ function hideZero (){
         
     } slideDown ();
 
-    function slideLeft () {
-        document.addEventListener('keydown', left);
-        function left (event) {
-             if (event.keyCode === 37) 
-                    console.log('left')        
-        }
-        
-    } slideLeft ();
-
-    //In order for the tiles to move to the right with key press in the cells array cell[i] need to +1 until it reaches the end of the row [3], [7], [11], [15]
-
-    function slideRight () {
-        document.addEventListener('keydown', right);
-        function right (event) {
-             if (event.keyCode === 39) 
-                    console.log('right')        
-        }    
-    } slideRight ();
+    //moving ROW ITEMS
 
     let rowOne = [];
     let rowTwo = [];
@@ -115,6 +96,53 @@ function hideZero (){
         } 
     } row ()
 
+    function slideLeft () {
+        document.addEventListener('keydown', left);
+        function left (event) {
+             if (event.keyCode === 37) 
+                    console.log('left')        
+        }
+        
+    } slideLeft ();
+
+    //In order for the tiles to move to the right with key press in the cells array cell[i] need to +1 until it reaches the end of the row [3], [7], [11], [15]
+
+
+    document.addEventListener('keydown', keyRight);
+
+
+    function keyRight (event) {
+    if (event.keyCode === 39) {
+        console.log('right')        
+        }  slideRight1 ()  
+    } 
+
+    function slideRight1 (){
+       if (rowOne[3].innerHTML == 0){
+           rowOne[3].innerHTML = rowOne[2].innerHTML;
+           rowOne[2].innerHTML = 0;
+           if (rowOne[3].innerHTML !=0 || rowOne[3].innerHTML != undefined){
+               rowOne[3].classList.remove('hidden')
+           }
+        } 
+        if (rowOne[2].innerHTML == 0) {
+            rowOne[2].innerHTML = rowOne[1].innerHTML;
+            rowOne[1].innerHTML = 0;
+            if (rowOne[2].innerHTML !=0 || rowOne[2].innerHTML !=undefined){
+                rowOne[2].classList.remove('hidden')
+            }
+        }
+        if (rowOne[1].innerHTML == 0) {
+            rowOne[1].innerHTML = rowOne[0].innerHTML;
+            rowOne[0].innerHTML = 0;
+            if (rowOne[1].innerHTML !=0 || rowOne[1].innerHTML !=undefined){
+                rowOne[1].classList.remove('hidden')
+            }
+        }  if (rowOne[0].innerHTML == 0 || rowOne[0].innerHTML ==undefined) {
+            
+        }
+    } 
+ 
     
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
