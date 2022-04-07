@@ -58,27 +58,154 @@ function hideZero (){
     let columnTwo = [cells[1], cells [5], cells[9], cells[13]];
     let columnThree = [cells[2], cells [6], cells[10], cells[14]];
     let columnFour = [cells[3], cells [7], cells[11], cells[15]];
+    
+    document.addEventListener('keydown', keyUp)
 
-    function slideUp () {
-        document.addEventListener('keydown', up);
-        function up (event) {
-             if (event.keyCode === 38) 
-                    console.log('up')        
+    function keyUp (event){
+        if (event.keyCode === 38){
+            slideUp ();
+            randomGenerate ();
         }
+    }
 
-    } slideUp ();
+    function slideUp1 (){
+        for (let i=0; i < columnOne.length; i++) {
+           if (columnOne[0].innerHTML == 0){
+               columnOne[0].innerHTML = columnOne[1].innerHTML;
+               columnOne[1].innerHTML = 0;
+               if (columnOne[0].innerHTML !=0 || columnOne[0].innerHTML != undefined){
+                   columnOne[0].classList.remove('hidden')
+               }
+            } 
+            if (columnOne[1].innerHTML == 0) {
+                columnOne[1].innerHTML = columnOne[2].innerHTML;
+                columnOne[2].innerHTML = 0;
+                if (columnOne[1].innerHTML !=0 || columnOne[1].innerHTML !=undefined){
+                    columnOne[1].classList.remove('hidden')
+                }
+            }
+            if (columnOne[2].innerHTML == 0) {
+                columnOne[2].innerHTML = columnOne[3].innerHTML;
+                columnOne[3].innerHTML = 0;
+                if (columnOne[2].innerHTML !=0 || columnOne[2].innerHTML !=undefined){
+                    columnOne[2].classList.remove('hidden')
+                }
+            }  if (columnOne[3].innerHTML == 0 || columnOne[3].innerHTML ==undefined) {
+                    hideZero ()
+            } 
+            }
+        } 
+
+        function slideUp2 (){
+            for (let i=0; i < columnTwo.length; i++) {
+               if (columnTwo[0].innerHTML == 0){
+                   columnTwo[0].innerHTML = columnTwo[1].innerHTML;
+                   columnTwo[1].innerHTML = 0;
+                   if (columnTwo[0].innerHTML !=0 || columnTwo[0].innerHTML != undefined){
+                       columnTwo[0].classList.remove('hidden')
+                   }
+                } 
+                if (columnTwo[1].innerHTML == 0) {
+                    columnTwo[1].innerHTML = columnTwo[2].innerHTML;
+                    columnTwo[2].innerHTML = 0;
+                    if (columnTwo[1].innerHTML !=0 || columnTwo[1].innerHTML !=undefined){
+                        columnTwo[1].classList.remove('hidden')
+                    }
+                }
+                if (columnTwo[2].innerHTML == 0) {
+                    columnTwo[2].innerHTML = columnTwo[3].innerHTML;
+                    columnTwo[3].innerHTML = 0;
+                    if (columnTwo[2].innerHTML !=0 || columnTwo[2].innerHTML !=undefined){
+                        columnTwo[2].classList.remove('hidden')
+                    }
+                }  if (columnTwo[3].innerHTML == 0 || columnTwo[3].innerHTML ==undefined) {
+                        hideZero ()
+                } 
+                }
+            } 
+
+            function slideUp3 (){
+                for (let i=0; i < columnThree.length; i++) {
+                   if (columnThree[0].innerHTML == 0){
+                       columnThree[0].innerHTML = columnThree[1].innerHTML;
+                       columnThree[1].innerHTML = 0;
+                       if (columnThree[0].innerHTML !=0 || columnThree[0].innerHTML != undefined){
+                           columnThree[0].classList.remove('hidden')
+                       }
+                    } 
+                    if (columnThree[1].innerHTML == 0) {
+                        columnThree[1].innerHTML = columnThree[2].innerHTML;
+                        columnThree[2].innerHTML = 0;
+                        if (columnThree[1].innerHTML !=0 || columnThree[1].innerHTML !=undefined){
+                            columnThree[1].classList.remove('hidden')
+                        }
+                    }
+                    if (columnThree[2].innerHTML == 0) {
+                        columnThree[2].innerHTML = columnThree[3].innerHTML;
+                        columnThree[3].innerHTML = 0;
+                        if (columnThree[2].innerHTML !=0 || columnThree[2].innerHTML !=undefined){
+                            columnThree[2].classList.remove('hidden')
+                        }
+                    }  if (columnThree[3].innerHTML == 0 || columnThree[3].innerHTML ==undefined) {
+                            hideZero ()
+                    } 
+                    }
+                } 
+    
+                function slideUp4 (){
+                    for (let i=0; i < columnFour.length; i++) {
+                       if (columnFour[0].innerHTML == 0){
+                           columnFour[0].innerHTML = columnFour[1].innerHTML;
+                           columnFour[1].innerHTML = 0;
+                           if (columnFour[0].innerHTML !=0 || columnFour[0].innerHTML != undefined){
+                               columnFour[0].classList.remove('hidden')
+                           }
+                        } 
+                        if (columnFour[1].innerHTML == 0) {
+                            columnFour[1].innerHTML = columnFour[2].innerHTML;
+                            columnFour[2].innerHTML = 0;
+                            if (columnFour[1].innerHTML !=0 || columnFour[1].innerHTML !=undefined){
+                                columnFour[1].classList.remove('hidden')
+                            }
+                        }
+                        if (columnFour[2].innerHTML == 0) {
+                            columnFour[2].innerHTML = columnFour[3].innerHTML;
+                            columnFour[3].innerHTML = 0;
+                            if (columnFour[2].innerHTML !=0 || columnFour[2].innerHTML !=undefined){
+                                columnFour[2].classList.remove('hidden')
+                            }
+                        }  if (columnFour[3].innerHTML == 0 || columnFour[3].innerHTML ==undefined) {
+                                hideZero ()
+                        } 
+                        }
+                    } 
+            
     
 
-    function slideDown () {
-        document.addEventListener('keydown', down);
-        function down (event) {
-             if (event.keyCode === 40) 
-                    console.log('down')        
-        }
-        
-    } slideDown ();
+    function slideUp (){
+        slideUp1 ();
+        slideUp2 ();  
+        slideUp3 ();
+        slideUp4 ();
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //moving ROW ITEMS
+    document.addEventListener('keydown', keyDown)
+
+    function keyDown (event){
+        if (event.keyCode === 40){
+            slideDown ();
+            randomGenerate ();
+        }
+    }
+
+    function slideDown (){
+        slideDown1 ();
+        slideDown2 ();  
+        slideDown3 ();
+        slideDown4 ();
+    }
+   //////////////////////////////////////////////////////////////////////////////////////
 
     let rowOne = [];
     let rowTwo = [];
