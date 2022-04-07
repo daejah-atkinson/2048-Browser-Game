@@ -22,11 +22,14 @@ createGameboard ();
 //This function needs to randomly generate a positioning on the board (Number between1-16). It need to determine if that position is open (not already containing a number) If that position is open it need to place a number 2 tile.
 function randomGenerate() {
     let position = Math.floor(Math.random()* 16);
-    // for (let i=0; i < cells.length; i++) {
+
         if(cells[position].innerHTML == 0){
             cells[position].innerHTML = 2
-        // } 
-    }    
+            console.log(cells[position])
+            cells[position].classList.remove('hidden') 
+    }  else {
+        randomGenerate ();
+    }  
 }
 //In order for two number 2 tiles to start on the board function is invoked twice
 randomGenerate();
@@ -113,11 +116,14 @@ function hideZero (){
 
     function keyRight (event) {
     if (event.keyCode === 39) {
-        console.log('right')        
-        }  slideRight1 ()  
-    } 
+        console.log('right')   
+        slideRight ();
+        randomGenerate ();     
+        }  
+    }
 
     function slideRight1 (){
+    for (let i=0; i < rowOne.length; i++) {
        if (rowOne[3].innerHTML == 0){
            rowOne[3].innerHTML = rowOne[2].innerHTML;
            rowOne[2].innerHTML = 0;
@@ -139,11 +145,101 @@ function hideZero (){
                 rowOne[1].classList.remove('hidden')
             }
         }  if (rowOne[0].innerHTML == 0 || rowOne[0].innerHTML ==undefined) {
-            
-        } hideZero ()
+                hideZero ()
+        } 
+        }
     } 
+
+    function slideRight2 (){
+        for (let i=0; i < rowTwo.length; i++) {
+           if (rowTwo[3].innerHTML == 0){
+               rowTwo[3].innerHTML = rowTwo[2].innerHTML;
+               rowTwo[2].innerHTML = 0;
+               if (rowTwo[3].innerHTML !=0 || rowTwo[3].innerHTML != undefined){
+                   rowTwo[3].classList.remove('hidden')
+               }
+            } 
+            if (rowTwo[2].innerHTML == 0) {
+                rowTwo[2].innerHTML = rowTwo[1].innerHTML;
+                rowTwo[1].innerHTML = 0;
+                if (rowTwo[2].innerHTML !=0 || rowTwo[2].innerHTML !=undefined){
+                    rowTwo[2].classList.remove('hidden')
+                }
+            }
+            if (rowTwo[1].innerHTML == 0) {
+                rowTwo[1].innerHTML = rowTwo[0].innerHTML;
+                rowTwo[0].innerHTML = 0;
+                if (rowTwo[1].innerHTML !=0 || rowTwo[1].innerHTML !=undefined){
+                    rowTwo[1].classList.remove('hidden')
+                }
+            }  if (rowTwo[0].innerHTML == 0 || rowTwo[0].innerHTML ==undefined) {
+                hideZero ()
+            } 
+            }
+        } 
+
+        function slideRight3 (){
+            for (let i=0; i < rowThree.length; i++) {
+               if (rowThree[3].innerHTML == 0){
+                   rowThree[3].innerHTML = rowThree[2].innerHTML;
+                   rowThree[2].innerHTML = 0;
+                   if (rowThree[3].innerHTML !=0 || rowThree[3].innerHTML != undefined){
+                       rowThree[3].classList.remove('hidden')
+                   }
+                } 
+                if (rowThree[2].innerHTML == 0) {
+                    rowThree[2].innerHTML = rowThree[1].innerHTML;
+                    rowThree[1].innerHTML = 0;
+                    if (rowThree[2].innerHTML !=0 || rowThree[2].innerHTML !=undefined){
+                        rowThree[2].classList.remove('hidden')
+                    }
+                }
+                if (rowThree[1].innerHTML == 0) {
+                    rowThree[1].innerHTML = rowThree[0].innerHTML;
+                    rowThree[0].innerHTML = 0;
+                    if (rowThree[1].innerHTML !=0 || rowThree[1].innerHTML !=undefined){
+                        rowThree[1].classList.remove('hidden')
+                    }
+                }  if (rowThree[0].innerHTML == 0 || rowThree[0].innerHTML ==undefined) {
+                    hideZero ()
+                } 
+                }
+            } 
  
+            function slideRight4 (){
+                for (let i=0; i < rowFour.length; i++) {
+                   if (rowFour[3].innerHTML == 0){
+                       rowFour[3].innerHTML = rowFour[2].innerHTML;
+                       rowFour[2].innerHTML = 0;
+                       if (rowFour[3].innerHTML !=0 || rowFour[3].innerHTML != undefined){
+                           rowFour[3].classList.remove('hidden')
+                       }
+                    } 
+                    if (rowFour[2].innerHTML == 0) {
+                        rowFour[2].innerHTML = rowFour[1].innerHTML;
+                        rowFour[1].innerHTML = 0;
+                        if (rowFour[2].innerHTML !=0 || rowFour[2].innerHTML !=undefined){
+                            rowFour[2].classList.remove('hidden')
+                        }
+                    }
+                    if (rowFour[1].innerHTML == 0) {
+                        rowFour[1].innerHTML = rowFour[0].innerHTML;
+                        rowFour[0].innerHTML = 0;
+                        if (rowFour[1].innerHTML !=0 || rowFour[1].innerHTML !=undefined){
+                            rowFour[1].classList.remove('hidden')
+                        }
+                    }  if (rowFour[0].innerHTML == 0 || rowFour[0].innerHTML ==undefined) {
+                        hideZero ()
+                    } 
+                    }
+                } 
     
+function slideRight (){
+    slideRight1 ();
+    slideRight2 ();  
+    slideRight3 ();
+    slideRight4 ();
+}
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
     // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.

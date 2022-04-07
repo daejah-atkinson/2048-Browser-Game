@@ -62,3 +62,7 @@ body {
 .hidden {
     color: #e7eaf6;
 }
+
+.show {
+    color: black;
+}
