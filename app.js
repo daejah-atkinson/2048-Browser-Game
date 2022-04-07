@@ -199,6 +199,118 @@ function hideZero (){
         }
     }
 
+    function slideDown1 (){
+        for (let i=0; i < columnOne.length; i++) {
+           if (columnOne[3].innerHTML == 0){
+               columnOne[3].innerHTML = columnOne[2].innerHTML;
+               columnOne[2].innerHTML = 0;
+               if (columnOne[3].innerHTML !=0 || columnOne[3].innerHTML != undefined){
+                   columnOne[3].classList.remove('hidden')
+               }
+            } 
+            if (columnOne[2].innerHTML == 0) {
+                columnOne[2].innerHTML = columnOne[1].innerHTML;
+                columnOne[1].innerHTML = 0;
+                if (columnOne[2].innerHTML !=0 || columnOne[2].innerHTML !=undefined){
+                    columnOne[2].classList.remove('hidden')
+                }
+            }
+            if (columnOne[1].innerHTML == 0) {
+                columnOne[1].innerHTML = columnOne[0].innerHTML;
+                columnOne[0].innerHTML = 0;
+                if (columnOne[1].innerHTML !=0 || columnOne[1].innerHTML !=undefined){
+                    columnOne[1].classList.remove('hidden')
+                }
+            }  if (columnOne[0].innerHTML == 0 || columnOne[0].innerHTML ==undefined) {
+                    hideZero ()
+            } 
+            }
+        } 
+
+        function slideDown2 (){
+            for (let i=0; i < columnTwo.length; i++) {
+               if (columnTwo[3].innerHTML == 0){
+                   columnTwo[3].innerHTML = columnTwo[2].innerHTML;
+                   columnTwo[2].innerHTML = 0;
+                   if (columnTwo[3].innerHTML !=0 || columnTwo[3].innerHTML != undefined){
+                       columnTwo[3].classList.remove('hidden')
+                   }
+                } 
+                if (columnTwo[2].innerHTML == 0) {
+                    columnTwo[2].innerHTML = columnTwo[1].innerHTML;
+                    columnTwo[1].innerHTML = 0;
+                    if (columnTwo[2].innerHTML !=0 || columnTwo[2].innerHTML !=undefined){
+                        columnTwo[2].classList.remove('hidden')
+                    }
+                }
+                if (columnTwo[1].innerHTML == 0) {
+                    columnTwo[1].innerHTML = columnTwo[0].innerHTML;
+                    columnTwo[0].innerHTML = 0;
+                    if (columnTwo[1].innerHTML !=0 || columnTwo[1].innerHTML !=undefined){
+                        columnTwo[1].classList.remove('hidden')
+                    }
+                }  if (columnTwo[0].innerHTML == 0 || columnTwo[0].innerHTML ==undefined) {
+                        hideZero ()
+                } 
+                }
+            } 
+
+            function slideDown3 (){
+                for (let i=0; i < columnThree.length; i++) {
+                   if (columnThree[3].innerHTML == 0){
+                       columnThree[3].innerHTML = columnThree[2].innerHTML;
+                       columnThree[2].innerHTML = 0;
+                       if (columnThree[3].innerHTML !=0 || columnThree[3].innerHTML != undefined){
+                           columnThree[3].classList.remove('hidden')
+                       }
+                    } 
+                    if (columnThree[2].innerHTML == 0) {
+                        columnThree[2].innerHTML = columnThree[1].innerHTML;
+                        columnThree[1].innerHTML = 0;
+                        if (columnThree[2].innerHTML !=0 || columnThree[2].innerHTML !=undefined){
+                            columnThree[2].classList.remove('hidden')
+                        }
+                    }
+                    if (columnThree[1].innerHTML == 0) {
+                        columnThree[1].innerHTML = columnThree[0].innerHTML;
+                        columnThree[0].innerHTML = 0;
+                        if (columnThree[1].innerHTML !=0 || columnThree[1].innerHTML !=undefined){
+                            columnThree[1].classList.remove('hidden')
+                        }
+                    }  if (columnThree[0].innerHTML == 0 || columnThree[0].innerHTML ==undefined) {
+                            hideZero ()
+                    } 
+                    }
+                } 
+
+                function slideDown4 (){
+                    for (let i=0; i < columnFour.length; i++) {
+                       if (columnFour[3].innerHTML == 0){
+                           columnFour[3].innerHTML = columnFour[2].innerHTML;
+                           columnFour[2].innerHTML = 0;
+                           if (columnFour[3].innerHTML !=0 || columnFour[3].innerHTML != undefined){
+                               columnFour[3].classList.remove('hidden')
+                           }
+                        } 
+                        if (columnFour[2].innerHTML == 0) {
+                            columnFour[2].innerHTML = columnFour[1].innerHTML;
+                            columnFour[1].innerHTML = 0;
+                            if (columnFour[2].innerHTML !=0 || columnFour[2].innerHTML !=undefined){
+                                columnFour[2].classList.remove('hidden')
+                            }
+                        }
+                        if (columnFour[1].innerHTML == 0) {
+                            columnFour[1].innerHTML = columnFour[0].innerHTML;
+                            columnFour[0].innerHTML = 0;
+                            if (columnFour[1].innerHTML !=0 || columnFour[1].innerHTML !=undefined){
+                                columnFour[1].classList.remove('hidden')
+                            }
+                        }  if (columnFour[0].innerHTML == 0 || columnFour[0].innerHTML ==undefined) {
+                                hideZero ()
+                        } 
+                        }
+                    } 
+
     function slideDown (){
         slideDown1 ();
         slideDown2 ();  
