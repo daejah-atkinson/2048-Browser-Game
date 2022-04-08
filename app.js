@@ -29,7 +29,7 @@ function randomGenerate() {
             cells[position].classList.remove('hidden');
     }  else {
         randomGenerate();
-    }  
+    } 
 }
 //In order for two number 2 tiles to start on the board function is invoked twice
 randomGenerate();
@@ -745,9 +745,13 @@ function slideRight(){
 
     function winCondition() {
         for(let i=0; i<cells.length; i++){
-            if (cells[i].innerHTML == 2048){
+            if (cells[i].innerHTML == 8){
                 winner.classList.add('show')
                 winner.classList.remove('winner')
+                document.removeEventListener('keydown', keyUp)
+                document.removeEventListener('keydown', keyRight )
+                document.removeEventListener('keydown', keyDown )
+                document.removeEventListener('keydown', keyLeft )
             } 
         } 
     }
