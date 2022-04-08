@@ -64,7 +64,7 @@ function hideZero(){
         if (event.keyCode === 38){
             slideUp();
             randomGenerate();
-        }
+        } changeColors();
     }
 
     function slideUp1(){
@@ -91,7 +91,7 @@ function hideZero(){
                 }
             }  if (columnOne[3].innerHTML == 0 || columnOne[3].innerHTML ==undefined) {
                     hideZero();
-            } 
+            } combineColumn1();
             }
         } 
 
@@ -119,7 +119,7 @@ function hideZero(){
                     }
                 }  if (columnTwo[3].innerHTML == 0 || columnTwo[3].innerHTML ==undefined) {
                         hideZero();
-                } 
+                } combineColumn2();
                 }
             } 
 
@@ -147,7 +147,7 @@ function hideZero(){
                         }
                     }  if (columnThree[3].innerHTML == 0 || columnThree[3].innerHTML ==undefined) {
                             hideZero();
-                    } 
+                    } combineColumn3();
                     }
                 } 
     
@@ -175,7 +175,7 @@ function hideZero(){
                             }
                         }  if (columnFour[3].innerHTML == 0 || columnFour[3].innerHTML ==undefined) {
                                 hideZero();
-                        } 
+                        } combineColumn4 ();
                         }
                     } 
             
@@ -195,7 +195,7 @@ function hideZero(){
         if (event.keyCode === 40){
             slideDown();
             randomGenerate();
-        }
+        } changeColors();
     }
 
     function slideDown1(){
@@ -222,7 +222,7 @@ function hideZero(){
                 }
             }  if (columnOne[0].innerHTML == 0 || columnOne[0].innerHTML ==undefined) {
                     hideZero();
-            } 
+            } combineColumn1();
             }
         } 
 
@@ -250,7 +250,7 @@ function hideZero(){
                     }
                 }  if (columnTwo[0].innerHTML == 0 || columnTwo[0].innerHTML ==undefined) {
                         hideZero();
-                } 
+                } combineColumn2();
                 }
             } 
 
@@ -278,7 +278,7 @@ function hideZero(){
                         }
                     }  if (columnThree[0].innerHTML == 0 || columnThree[0].innerHTML ==undefined) {
                             hideZero();
-                    } 
+                    } combineColumn3();
                     }
                 } 
 
@@ -306,7 +306,7 @@ function hideZero(){
                             }
                         }  if (columnFour[0].innerHTML == 0 || columnFour[0].innerHTML ==undefined) {
                                 hideZero();
-                        } 
+                        } combineColumn4();
                         }
                     } 
 
@@ -345,7 +345,7 @@ function hideZero(){
         if (event.keyCode === 37){
             slideLeft();
             randomGenerate();
-        }
+        } changeColors();
     }
 
     function slideLeft1(){
@@ -478,7 +478,7 @@ function hideZero(){
     if (event.keyCode === 39) {
         slideRight ();
         randomGenerate ();  
-        }  
+        }  changeColors();
     }
 
     function slideRight1 (){
@@ -642,9 +642,68 @@ function slideRight(){
         }
     }
    
+    //////////////////////////////////////
+
+    function combineColumn1() {
+        for (let i=0; i < 3; i++){
+            if (columnOne[i].innerHTML === columnOne[i+1].innerHTML){
+                let total = parseInt(columnOne[i].innerHTML) + parseInt(columnOne[i+1].innerHTML)
+                columnOne[i].innerHTML = total
+                columnOne[i+1].innerHTML = 0
+            }
+        }
+    }
+
+    function combineColumn2() {
+        for (let i=0; i < 3; i++){
+            if (columnTwo[i].innerHTML === columnTwo[i+1].innerHTML){
+                let total = parseInt(columnTwo[i].innerHTML) + parseInt(columnTwo[i+1].innerHTML)
+                columnTwo[i].innerHTML = total
+                columnTwo[i+1].innerHTML = 0
+            }
+        }
+    }
+
+    function combineColumn3() {
+        for (let i=0; i < 3; i++){
+            if (columnThree[i].innerHTML === columnThree[i+1].innerHTML){
+                let total = parseInt(columnThree[i].innerHTML) + parseInt(columnThree[i+1].innerHTML)
+                columnThree[i].innerHTML = total
+                columnThree[i+1].innerHTML = 0
+            }
+        }
+    }
     
+    function combineColumn4() {
+        for (let i=0; i < 3; i++){
+            if (columnFour[i].innerHTML === columnFour[i+1].innerHTML){
+                let total = parseInt(columnFour[i].innerHTML) + parseInt(columnFour[i+1].innerHTML)
+                columnFour[i].innerHTML = total
+                columnFour[i+1].innerHTML = 0
+            }
+        }
+    }
 
-
+    //CHANGE COLORS WITH NUMBER REPRESENTED
+    function changeColors(){
+    for(let i=0; i<cells.length; i++){
+        if (cells[i].innerHTML == 0){
+            cells[i].classList.toggle("zero")
+        }
+        if (cells[i].innerHTML == 2){
+            cells[i].classList.toggle("two")
+        }
+        if (cells[i].innerHTML == 4){
+            cells[i].classList.toggle("four")
+        }
+        if (cells[i].innerHTML == 8){
+            cells[i].classList.toggle("eight")
+        }
+        if (cells[i].innerHTML == 16){
+            cells[i].classList.toggle("sixteen")
+        } 
+    }
+} 
 //5. This continues until player reaches tile 2048 
     //If the player reaches tile 2048 the game stops and winning message pops up
 //6. When game board is full and no more moves can be made
