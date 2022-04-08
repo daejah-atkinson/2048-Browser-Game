@@ -5,6 +5,7 @@
 //Code to create grid using javascript instead of css courtesy of https://code-boxx.com/create-grid-javascript/
 
 let cells = [];
+let score = [];
 
 function createGameboard(){
     for (let i=0; i < 16; i++){
@@ -65,6 +66,7 @@ function hideZero(){
             slideUp();
             randomGenerate();
         } 
+        scoring()
         // changeColors();
         winCondition();
     }
@@ -198,6 +200,7 @@ function hideZero(){
             slideDown();
             randomGenerate();
         } 
+        scoring()
         // changeColors();
         winCondition()
     }
@@ -350,6 +353,7 @@ function hideZero(){
             slideLeft();
             randomGenerate();
         } 
+        scoring()
         // changeColors();
         winCondition();
     }
@@ -485,6 +489,7 @@ function hideZero(){
         slideRight ();
         randomGenerate ();  
         }  
+        scoring()
         // changeColors();
         winCondition()
     }
@@ -616,6 +621,7 @@ function slideRight(){
                 let total = parseInt(rowOne[i].innerHTML) + parseInt(rowOne[i+1].innerHTML)
                 rowOne[i].innerHTML = total
                 rowOne[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -626,6 +632,7 @@ function slideRight(){
                 let total = parseInt(rowTwo[i].innerHTML) + parseInt(rowTwo[i+1].innerHTML)
                 rowTwo[i].innerHTML = total
                 rowTwo[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -636,6 +643,7 @@ function slideRight(){
                 let total = parseInt(rowThree[i].innerHTML) + parseInt(rowThree[i+1].innerHTML)
                 rowThree[i].innerHTML = total
                 rowThree[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -646,6 +654,7 @@ function slideRight(){
                 let total = parseInt(rowFour[i].innerHTML) + parseInt(rowFour[i+1].innerHTML)
                 rowFour[i].innerHTML = total
                 rowFour[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -658,6 +667,7 @@ function slideRight(){
                 let total = parseInt(columnOne[i].innerHTML) + parseInt(columnOne[i+1].innerHTML)
                 columnOne[i].innerHTML = total
                 columnOne[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -668,6 +678,7 @@ function slideRight(){
                 let total = parseInt(columnTwo[i].innerHTML) + parseInt(columnTwo[i+1].innerHTML)
                 columnTwo[i].innerHTML = total
                 columnTwo[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -678,6 +689,7 @@ function slideRight(){
                 let total = parseInt(columnThree[i].innerHTML) + parseInt(columnThree[i+1].innerHTML)
                 columnThree[i].innerHTML = total
                 columnThree[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -688,6 +700,7 @@ function slideRight(){
                 let total = parseInt(columnFour[i].innerHTML) + parseInt(columnFour[i+1].innerHTML)
                 columnFour[i].innerHTML = total
                 columnFour[i+1].innerHTML = 0
+                score.push(total);
             }
         }
     }
@@ -712,6 +725,19 @@ function slideRight(){
 //         } 
 //     }
 // } 
+
+
+//Total score with each move
+    let scoreboard = document.querySelector('h3')
+
+    function scoring() {
+        let sum = 0
+    for (let i=0; i<score.length; i++){
+        sum +=score[i]
+    } scoreboard.innerHTML = `Score ${sum}`
+    return sum;
+}
+
 //5. This continues until player reaches tile 2048 
     //If the player reaches tile 2048 the game stops and winning message pops up
 
@@ -719,11 +745,27 @@ function slideRight(){
 
     function winCondition() {
         for(let i=0; i<cells.length; i++){
-            if (cells[i].innerHTML == 8){
+            if (cells[i].innerHTML == 2048){
                 winner.classList.add('show')
                 winner.classList.remove('winner')
-            }
-        }
+            } 
+        } 
     }
 //6. When game board is full and no more moves can be made
     //if the gameboard is full and no more moves can be made loosing message appears
+
+    let looser = document.querySelector('.looser')
+
+    function looseCondition() {
+        let tiles = 0
+        for(let i=0; i<cells.length; i++){
+        tiles++    
+        console.log(tiles)  
+        if (tiles == 16 && cells[i].innerHTML == 0){
+            console.log('you loose')
+    } 
+    }
+} 
+
+    // looser.classList.add('show')
+    // looser.classList.remove('looser')
