@@ -25,7 +25,6 @@ function randomGenerate() {
 
         if(cells[position].innerHTML == 0){
             cells[position].innerHTML = 2
-            console.log(cells[position])
             cells[position].classList.remove('hidden') 
     }  else {
         randomGenerate ();
@@ -373,7 +372,7 @@ function hideZero (){
                 }
             }  if (rowOne[3].innerHTML == 0 || rowOne[3].innerHTML ==undefined) {
                     hideZero ()
-            } 
+            } combineRow1 ();
             }
         } 
     
@@ -479,7 +478,7 @@ function hideZero (){
     function keyRight (event) {
     if (event.keyCode === 39) {
         slideRight ();
-        randomGenerate ();     
+        randomGenerate ();  
         }  
     }
 
@@ -490,7 +489,7 @@ function hideZero (){
            rowOne[2].innerHTML = 0;
            if (rowOne[3].innerHTML !=0 || rowOne[3].innerHTML != undefined){
                rowOne[3].classList.remove('hidden')
-           }
+           } 
         } 
         if (rowOne[2].innerHTML == 0) {
             rowOne[2].innerHTML = rowOne[1].innerHTML;
@@ -507,8 +506,8 @@ function hideZero (){
             }
         }  if (rowOne[0].innerHTML == 0 || rowOne[0].innerHTML ==undefined) {
                 hideZero ()
+        } combineRow1 ();
         } 
-        }
     } 
 
     function slideRight2 (){
@@ -592,7 +591,7 @@ function hideZero (){
                     }  if (rowFour[0].innerHTML == 0 || rowFour[0].innerHTML ==undefined) {
                         hideZero ()
                     } 
-                    }
+                    } 
                 } 
     
 function slideRight (){
@@ -603,11 +602,24 @@ function slideRight (){
 }
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
-    // If there are multiple matching tiles, for example four 2 tiles in a row, they will only be combined to create two 4 tiles.
-    function combineTiles () {
+    
+    function combineRow1 () {
+        for (let i=0; i < 3; i++){
+            if (rowOne[i].innerHTML === rowOne[i+1].innerHTML){
+                console.log(rowOne[i].innerHTML)
+                console.log(rowOne[i+1].innerHTML)
+                let total = parseInt(rowOne[i].innerHTML) + parseInt(rowOne[i+1].innerHTML)
+                console.log(total)
+                rowOne[i].innerHTML = total
+                console.log(rowOne[i].innerHTML)
+                rowOne[i+1].innerHTML = 0
+            }
+        }
+        
         //if the tile to the right of the tile in the row is the same number that
     }
    
+    
 
 
 //5. This continues until player reaches tile 2048 
