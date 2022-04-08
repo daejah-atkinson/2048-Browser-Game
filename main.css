@@ -71,7 +71,7 @@ body {
 .winner {
     display: none;
 }
-.looser {
+.loser {
    display: none;
 }
 
@@ -79,10 +79,6 @@ body {
     color: #2b4353;
     font-family: 'Rubik', sans-serif;
     text-align: center;
-}
-
-.sixteen{
-    background-color: #8594e4;
 }
 
 .zero {
@@ -97,4 +93,40 @@ body {
 }
 .eight {
     background-color: #a2a8d3 ;
+}
+.sixteen{
+    background-color: #8594e4;
+}
+
+.thirty-two {
+    background-color: #6643b5; 
+    color: white;
+}
+
+.sixty-four {
+    background-color: #430f58; 
+    color: white;
+}
+
+.one-twenty-eight {
+    background-color: #38598b;
+    color: white;
+}
+
+.two-fifty-six {
+    background-color:  #113f67;
+    color: white;
+}
+
+.five-twelve {
+    background-color:  #3d84a8;
+    color: white;
+}
+
+.one-zero-two-four {
+    background-color: #46cdcf; 
+}
+
+.twenty-forty-eight {
+    background-color: #abedd8; 
 }

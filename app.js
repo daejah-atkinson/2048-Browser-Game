@@ -27,8 +27,10 @@ function randomGenerate() {
         if(cells[position].innerHTML == 0){
             cells[position].innerHTML = 2;
             cells[position].classList.remove('hidden');
+            changeColors()
     }  else {
         randomGenerate();
+        changeColors()
     } 
 }
 //In order for two number 2 tiles to start on the board function is invoked twice
@@ -67,8 +69,9 @@ function hideZero(){
             randomGenerate();
         } 
         scoring()
-        // changeColors();
+        changeColors();
         winCondition();
+        loseCondition();
     }
 
     function slideUp1(){
@@ -200,9 +203,10 @@ function hideZero(){
             slideDown();
             randomGenerate();
         } 
-        scoring()
-        // changeColors();
-        winCondition()
+        scoring();
+        changeColors();
+        winCondition();
+        loseCondition();
     }
 
     function slideDown1(){
@@ -354,8 +358,9 @@ function hideZero(){
             randomGenerate();
         } 
         scoring()
-        // changeColors();
+        changeColors();
         winCondition();
+        loseCondition();
     }
 
     function slideLeft1(){
@@ -489,9 +494,10 @@ function hideZero(){
         slideRight ();
         randomGenerate ();  
         }  
-        scoring()
-        // changeColors();
-        winCondition()
+        scoring();
+        changeColors();
+        winCondition();
+        loseCondition();
     }
 
     function slideRight1 (){
@@ -705,26 +711,185 @@ function slideRight(){
         }
     }
 
-    //CHANGE COLORS WITH NUMBER REPRESENTED
-//     function changeColors(){
-//     for(let i=0; i<cells.length; i++){
-//         if (cells[i].innerHTML == 0){
-//             cells[i].classList.toggle("zero")
-//         }
-//         if (cells[i].innerHTML == 2){
-//             cells[i].classList.toggle("two")
-//         }
-//         if (cells[i].innerHTML == 4){
-//             cells[i].classList.toggle("four")
-//         }
-//         if (cells[i].innerHTML == 8){
-//             cells[i].classList.toggle("eight")
-//         }
-//         if (cells[i].innerHTML == 16){
-//             cells[i].classList.toggle("sixteen")
-//         } 
-//     }
-// } 
+    // CHANGE COLORS WITH NUMBER REPRESENTED
+    function changeColors(){
+    for(let i=0; i<cells.length; i++){
+        if (cells[i].innerHTML == 0){
+            cells[i].classList.add("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+        }
+        if (cells[i].innerHTML == 2){
+            cells[i].classList.add("two")
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+        }
+        if (cells[i].innerHTML == 4){
+            cells[i].classList.add("four")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+        }
+        if (cells[i].innerHTML == 8){
+            cells[i].classList.add("eight")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+        }
+        if (cells[i].innerHTML == 16){
+            cells[i].classList.add("sixteen")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+        } 
+        if (cells[i].innerHTML == 32){
+            cells[i].classList.add("thirty-two")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+        }
+        if (cells[i].innerHTML == 64){
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.add("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+
+        }
+        if (cells[i].innerHTML == 128){
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.add("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+
+        }
+        if (cells[i].innerHTML == 256) {
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.add("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+
+        }
+        if (cells[i].innerHTML == 512){
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.add("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+
+        }
+        if (cells[i].innerHTML == 1024){
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.add("one-zero-two-four")
+            cells[i].classList.remove("twenty-forty-eight")
+            
+        }
+        if (cells[i].innerHTML == 2048){
+            cells[i].classList.remove("zero")
+            cells[i].classList.remove("two")
+            cells[i].classList.remove("four")
+            cells[i].classList.remove("eight")
+            cells[i].classList.remove("sixteen")
+            cells[i].classList.remove("thirty-two")
+            cells[i].classList.remove("sixty-four")
+            cells[i].classList.remove("one-twenty-eight")
+            cells[i].classList.remove("two-fifty-six")
+            cells[i].classList.remove("five-twelve")
+            cells[i].classList.remove("one-zero-two-four")
+            cells[i].classList.add("twenty-forty-eight")
+
+        }
+    }
+} 
 
 
 //Total score with each move
@@ -745,31 +910,35 @@ function slideRight(){
 
     function winCondition() {
         for(let i=0; i<cells.length; i++){
-            if (cells[i].innerHTML == 8){
+            if (cells[i].innerHTML == 2048){
                 winner.classList.add('show')
                 winner.classList.remove('winner')
                 document.removeEventListener('keydown', keyUp)
-                document.removeEventListener('keydown', keyRight )
-                document.removeEventListener('keydown', keyDown )
-                document.removeEventListener('keydown', keyLeft )
+                document.removeEventListener('keydown', keyRight)
+                document.removeEventListener('keydown', keyDown)
+                document.removeEventListener('keydown', keyLeft)
             } 
         } 
     }
 //6. When game board is full and no more moves can be made
     //if the gameboard is full and no more moves can be made loosing message appears
 
-    let looser = document.querySelector('.looser')
+    let loser = document.querySelector('.loser')
 
-    function looseCondition() {
-        let tiles = 0
-        for(let i=0; i<cells.length; i++){
-        tiles++    
-        console.log(tiles)  
-        if (tiles == 16 && cells[i].innerHTML == 0){
-            console.log('you loose')
-    } 
+    function loseCondition(){
+        let tiles =0;
+        for(let i=0; i< cells.length; i++){
+            if(cells[i].innerHTML == 0){
+                tiles++
+            }
+        } if (tiles == 0){
+            loser.classList.add('show');
+            loser.classList.remove('loser');
+            document.removeEventListener('keydown', keyUp)
+            document.removeEventListener('keydown', keyRight)
+            document.removeEventListener('keydown', keyDown)
+            document.removeEventListener('keydown', keyLeft)
+        }
     }
-} 
 
-    // looser.classList.add('show')
-    // looser.classList.remove('looser')
+
