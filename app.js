@@ -64,7 +64,9 @@ function hideZero(){
         if (event.keyCode === 38){
             slideUp();
             randomGenerate();
-        } changeColors();
+        } 
+        // changeColors();
+        winCondition();
     }
 
     function slideUp1(){
@@ -195,7 +197,9 @@ function hideZero(){
         if (event.keyCode === 40){
             slideDown();
             randomGenerate();
-        } changeColors();
+        } 
+        // changeColors();
+        winCondition()
     }
 
     function slideDown1(){
@@ -345,7 +349,9 @@ function hideZero(){
         if (event.keyCode === 37){
             slideLeft();
             randomGenerate();
-        } changeColors();
+        } 
+        // changeColors();
+        winCondition();
     }
 
     function slideLeft1(){
@@ -478,7 +484,9 @@ function hideZero(){
     if (event.keyCode === 39) {
         slideRight ();
         randomGenerate ();  
-        }  changeColors();
+        }  
+        // changeColors();
+        winCondition()
     }
 
     function slideRight1 (){
@@ -685,26 +693,37 @@ function slideRight(){
     }
 
     //CHANGE COLORS WITH NUMBER REPRESENTED
-    function changeColors(){
-    for(let i=0; i<cells.length; i++){
-        if (cells[i].innerHTML == 0){
-            cells[i].classList.toggle("zero")
-        }
-        if (cells[i].innerHTML == 2){
-            cells[i].classList.toggle("two")
-        }
-        if (cells[i].innerHTML == 4){
-            cells[i].classList.toggle("four")
-        }
-        if (cells[i].innerHTML == 8){
-            cells[i].classList.toggle("eight")
-        }
-        if (cells[i].innerHTML == 16){
-            cells[i].classList.toggle("sixteen")
-        } 
-    }
-} 
+//     function changeColors(){
+//     for(let i=0; i<cells.length; i++){
+//         if (cells[i].innerHTML == 0){
+//             cells[i].classList.toggle("zero")
+//         }
+//         if (cells[i].innerHTML == 2){
+//             cells[i].classList.toggle("two")
+//         }
+//         if (cells[i].innerHTML == 4){
+//             cells[i].classList.toggle("four")
+//         }
+//         if (cells[i].innerHTML == 8){
+//             cells[i].classList.toggle("eight")
+//         }
+//         if (cells[i].innerHTML == 16){
+//             cells[i].classList.toggle("sixteen")
+//         } 
+//     }
+// } 
 //5. This continues until player reaches tile 2048 
     //If the player reaches tile 2048 the game stops and winning message pops up
+
+    let winner = document.querySelector('.winner')
+
+    function winCondition() {
+        for(let i=0; i<cells.length; i++){
+            if (cells[i].innerHTML == 8){
+                winner.classList.add('show')
+                winner.classList.remove('winner')
+            }
+        }
+    }
 //6. When game board is full and no more moves can be made
     //if the gameboard is full and no more moves can be made loosing message appears

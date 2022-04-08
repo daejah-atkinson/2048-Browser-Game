@@ -64,6 +64,19 @@ body {
     color: #e7eaf6;
 }
 
+.winner {
+    display: none;
+}
+.looser {
+   display: none;
+}
+
+.show {
+    color: #2b4353;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
 .sixteen{
     background-color: #8594e4;
 }
