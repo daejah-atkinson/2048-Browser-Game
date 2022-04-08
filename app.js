@@ -6,7 +6,7 @@
 
 let cells = [];
 
-function createGameboard (){
+function createGameboard(){
     for (let i=0; i < 16; i++){
         let container = document.getElementById('gameboard');
         let cell = document.createElement('div');
@@ -15,7 +15,7 @@ function createGameboard (){
         cells.push(cell);    
     } 
 } 
-createGameboard ();
+createGameboard();
 
 //2. Game board starts out with two number 2 tiles
 //Create a function that randomly generates the number 2 on the board.
@@ -24,10 +24,10 @@ function randomGenerate() {
     let position = Math.floor(Math.random()* 16);
 
         if(cells[position].innerHTML == 0){
-            cells[position].innerHTML = 2
-            cells[position].classList.remove('hidden') 
+            cells[position].innerHTML = 2;
+            cells[position].classList.remove('hidden');
     }  else {
-        randomGenerate ();
+        randomGenerate();
     }  
 }
 //In order for two number 2 tiles to start on the board function is invoked twice
@@ -36,13 +36,13 @@ randomGenerate();
 
 
 //Hide zeros
-function hideZero (){
+function hideZero(){
     for (let i=0; i < cells.length; i++){
         if (cells[i].innerHTML == 0 || cells[i].innerHTML == undefined){
-            cells[i].classList.add('hidden')
+            cells[i].classList.add('hidden');
         }
     }
-} hideZero ()
+} hideZero();
 
 //3. Player uses the arrow keys to slide the tiles on the board
     // Up arrow --> slides tiles up (keycode: 38)
@@ -58,134 +58,134 @@ function hideZero (){
     let columnThree = [cells[2], cells [6], cells[10], cells[14]];
     let columnFour = [cells[3], cells [7], cells[11], cells[15]];
     
-    document.addEventListener('keydown', keyUp)
+    document.addEventListener('keydown', keyUp);
 
     function keyUp (event){
         if (event.keyCode === 38){
-            slideUp ();
-            randomGenerate ();
+            slideUp();
+            randomGenerate();
         }
     }
 
-    function slideUp1 (){
+    function slideUp1(){
         for (let i=0; i < columnOne.length; i++) {
            if (columnOne[0].innerHTML == 0){
                columnOne[0].innerHTML = columnOne[1].innerHTML;
                columnOne[1].innerHTML = 0;
                if (columnOne[0].innerHTML !=0 || columnOne[0].innerHTML != undefined){
-                   columnOne[0].classList.remove('hidden')
+                   columnOne[0].classList.remove('hidden');
                }
             } 
             if (columnOne[1].innerHTML == 0) {
                 columnOne[1].innerHTML = columnOne[2].innerHTML;
                 columnOne[2].innerHTML = 0;
                 if (columnOne[1].innerHTML !=0 || columnOne[1].innerHTML !=undefined){
-                    columnOne[1].classList.remove('hidden')
+                    columnOne[1].classList.remove('hidden');
                 }
             }
             if (columnOne[2].innerHTML == 0) {
                 columnOne[2].innerHTML = columnOne[3].innerHTML;
                 columnOne[3].innerHTML = 0;
                 if (columnOne[2].innerHTML !=0 || columnOne[2].innerHTML !=undefined){
-                    columnOne[2].classList.remove('hidden')
+                    columnOne[2].classList.remove('hidden');
                 }
             }  if (columnOne[3].innerHTML == 0 || columnOne[3].innerHTML ==undefined) {
-                    hideZero ()
+                    hideZero();
             } 
             }
         } 
 
-        function slideUp2 (){
+        function slideUp2(){
             for (let i=0; i < columnTwo.length; i++) {
                if (columnTwo[0].innerHTML == 0){
                    columnTwo[0].innerHTML = columnTwo[1].innerHTML;
                    columnTwo[1].innerHTML = 0;
                    if (columnTwo[0].innerHTML !=0 || columnTwo[0].innerHTML != undefined){
-                       columnTwo[0].classList.remove('hidden')
+                       columnTwo[0].classList.remove('hidden');
                    }
                 } 
                 if (columnTwo[1].innerHTML == 0) {
                     columnTwo[1].innerHTML = columnTwo[2].innerHTML;
                     columnTwo[2].innerHTML = 0;
                     if (columnTwo[1].innerHTML !=0 || columnTwo[1].innerHTML !=undefined){
-                        columnTwo[1].classList.remove('hidden')
+                        columnTwo[1].classList.remove('hidden');
                     }
                 }
                 if (columnTwo[2].innerHTML == 0) {
                     columnTwo[2].innerHTML = columnTwo[3].innerHTML;
                     columnTwo[3].innerHTML = 0;
                     if (columnTwo[2].innerHTML !=0 || columnTwo[2].innerHTML !=undefined){
-                        columnTwo[2].classList.remove('hidden')
+                        columnTwo[2].classList.remove('hidden');
                     }
                 }  if (columnTwo[3].innerHTML == 0 || columnTwo[3].innerHTML ==undefined) {
-                        hideZero ()
+                        hideZero();
                 } 
                 }
             } 
 
-            function slideUp3 (){
+            function slideUp3(){
                 for (let i=0; i < columnThree.length; i++) {
                    if (columnThree[0].innerHTML == 0){
                        columnThree[0].innerHTML = columnThree[1].innerHTML;
                        columnThree[1].innerHTML = 0;
                        if (columnThree[0].innerHTML !=0 || columnThree[0].innerHTML != undefined){
-                           columnThree[0].classList.remove('hidden')
+                           columnThree[0].classList.remove('hidden');
                        }
                     } 
                     if (columnThree[1].innerHTML == 0) {
                         columnThree[1].innerHTML = columnThree[2].innerHTML;
                         columnThree[2].innerHTML = 0;
                         if (columnThree[1].innerHTML !=0 || columnThree[1].innerHTML !=undefined){
-                            columnThree[1].classList.remove('hidden')
+                            columnThree[1].classList.remove('hidden');
                         }
                     }
                     if (columnThree[2].innerHTML == 0) {
                         columnThree[2].innerHTML = columnThree[3].innerHTML;
                         columnThree[3].innerHTML = 0;
                         if (columnThree[2].innerHTML !=0 || columnThree[2].innerHTML !=undefined){
-                            columnThree[2].classList.remove('hidden')
+                            columnThree[2].classList.remove('hidden');
                         }
                     }  if (columnThree[3].innerHTML == 0 || columnThree[3].innerHTML ==undefined) {
-                            hideZero ()
+                            hideZero();
                     } 
                     }
                 } 
     
-                function slideUp4 (){
+                function slideUp4(){
                     for (let i=0; i < columnFour.length; i++) {
                        if (columnFour[0].innerHTML == 0){
                            columnFour[0].innerHTML = columnFour[1].innerHTML;
                            columnFour[1].innerHTML = 0;
                            if (columnFour[0].innerHTML !=0 || columnFour[0].innerHTML != undefined){
-                               columnFour[0].classList.remove('hidden')
+                               columnFour[0].classList.remove('hidden');
                            }
                         } 
                         if (columnFour[1].innerHTML == 0) {
                             columnFour[1].innerHTML = columnFour[2].innerHTML;
                             columnFour[2].innerHTML = 0;
                             if (columnFour[1].innerHTML !=0 || columnFour[1].innerHTML !=undefined){
-                                columnFour[1].classList.remove('hidden')
+                                columnFour[1].classList.remove('hidden');
                             }
                         }
                         if (columnFour[2].innerHTML == 0) {
                             columnFour[2].innerHTML = columnFour[3].innerHTML;
                             columnFour[3].innerHTML = 0;
                             if (columnFour[2].innerHTML !=0 || columnFour[2].innerHTML !=undefined){
-                                columnFour[2].classList.remove('hidden')
+                                columnFour[2].classList.remove('hidden');
                             }
                         }  if (columnFour[3].innerHTML == 0 || columnFour[3].innerHTML ==undefined) {
-                                hideZero ()
+                                hideZero();
                         } 
                         }
                     } 
             
     
 
-    function slideUp (){
-        slideUp1 ();
-        slideUp2 ();  
-        slideUp3 ();
-        slideUp4 ();
+    function slideUp(){
+        slideUp1();
+        slideUp2();  
+        slideUp3();
+        slideUp4();
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -193,128 +193,128 @@ function hideZero (){
 
     function keyDown (event){
         if (event.keyCode === 40){
-            slideDown ();
-            randomGenerate ();
+            slideDown();
+            randomGenerate();
         }
     }
 
-    function slideDown1 (){
+    function slideDown1(){
         for (let i=0; i < columnOne.length; i++) {
            if (columnOne[3].innerHTML == 0){
                columnOne[3].innerHTML = columnOne[2].innerHTML;
                columnOne[2].innerHTML = 0;
                if (columnOne[3].innerHTML !=0 || columnOne[3].innerHTML != undefined){
-                   columnOne[3].classList.remove('hidden')
+                   columnOne[3].classList.remove('hidden');
                }
             } 
             if (columnOne[2].innerHTML == 0) {
                 columnOne[2].innerHTML = columnOne[1].innerHTML;
                 columnOne[1].innerHTML = 0;
                 if (columnOne[2].innerHTML !=0 || columnOne[2].innerHTML !=undefined){
-                    columnOne[2].classList.remove('hidden')
+                    columnOne[2].classList.remove('hidden');
                 }
             }
             if (columnOne[1].innerHTML == 0) {
                 columnOne[1].innerHTML = columnOne[0].innerHTML;
                 columnOne[0].innerHTML = 0;
                 if (columnOne[1].innerHTML !=0 || columnOne[1].innerHTML !=undefined){
-                    columnOne[1].classList.remove('hidden')
+                    columnOne[1].classList.remove('hidden');
                 }
             }  if (columnOne[0].innerHTML == 0 || columnOne[0].innerHTML ==undefined) {
-                    hideZero ()
+                    hideZero();
             } 
             }
         } 
 
-        function slideDown2 (){
+        function slideDown2(){
             for (let i=0; i < columnTwo.length; i++) {
                if (columnTwo[3].innerHTML == 0){
                    columnTwo[3].innerHTML = columnTwo[2].innerHTML;
                    columnTwo[2].innerHTML = 0;
                    if (columnTwo[3].innerHTML !=0 || columnTwo[3].innerHTML != undefined){
-                       columnTwo[3].classList.remove('hidden')
+                       columnTwo[3].classList.remove('hidden');
                    }
                 } 
                 if (columnTwo[2].innerHTML == 0) {
                     columnTwo[2].innerHTML = columnTwo[1].innerHTML;
                     columnTwo[1].innerHTML = 0;
                     if (columnTwo[2].innerHTML !=0 || columnTwo[2].innerHTML !=undefined){
-                        columnTwo[2].classList.remove('hidden')
+                        columnTwo[2].classList.remove('hidden');
                     }
                 }
                 if (columnTwo[1].innerHTML == 0) {
                     columnTwo[1].innerHTML = columnTwo[0].innerHTML;
                     columnTwo[0].innerHTML = 0;
                     if (columnTwo[1].innerHTML !=0 || columnTwo[1].innerHTML !=undefined){
-                        columnTwo[1].classList.remove('hidden')
+                        columnTwo[1].classList.remove('hidden');
                     }
                 }  if (columnTwo[0].innerHTML == 0 || columnTwo[0].innerHTML ==undefined) {
-                        hideZero ()
+                        hideZero();
                 } 
                 }
             } 
 
-            function slideDown3 (){
+            function slideDown3(){
                 for (let i=0; i < columnThree.length; i++) {
                    if (columnThree[3].innerHTML == 0){
                        columnThree[3].innerHTML = columnThree[2].innerHTML;
                        columnThree[2].innerHTML = 0;
                        if (columnThree[3].innerHTML !=0 || columnThree[3].innerHTML != undefined){
-                           columnThree[3].classList.remove('hidden')
+                           columnThree[3].classList.remove('hidden');
                        }
                     } 
                     if (columnThree[2].innerHTML == 0) {
                         columnThree[2].innerHTML = columnThree[1].innerHTML;
                         columnThree[1].innerHTML = 0;
                         if (columnThree[2].innerHTML !=0 || columnThree[2].innerHTML !=undefined){
-                            columnThree[2].classList.remove('hidden')
+                            columnThree[2].classList.remove('hidden');
                         }
                     }
                     if (columnThree[1].innerHTML == 0) {
                         columnThree[1].innerHTML = columnThree[0].innerHTML;
                         columnThree[0].innerHTML = 0;
                         if (columnThree[1].innerHTML !=0 || columnThree[1].innerHTML !=undefined){
-                            columnThree[1].classList.remove('hidden')
+                            columnThree[1].classList.remove('hidden');
                         }
                     }  if (columnThree[0].innerHTML == 0 || columnThree[0].innerHTML ==undefined) {
-                            hideZero ()
+                            hideZero();
                     } 
                     }
                 } 
 
-                function slideDown4 (){
+                function slideDown4(){
                     for (let i=0; i < columnFour.length; i++) {
                        if (columnFour[3].innerHTML == 0){
                            columnFour[3].innerHTML = columnFour[2].innerHTML;
                            columnFour[2].innerHTML = 0;
                            if (columnFour[3].innerHTML !=0 || columnFour[3].innerHTML != undefined){
-                               columnFour[3].classList.remove('hidden')
+                               columnFour[3].classList.remove('hidden');
                            }
                         } 
                         if (columnFour[2].innerHTML == 0) {
                             columnFour[2].innerHTML = columnFour[1].innerHTML;
                             columnFour[1].innerHTML = 0;
                             if (columnFour[2].innerHTML !=0 || columnFour[2].innerHTML !=undefined){
-                                columnFour[2].classList.remove('hidden')
+                                columnFour[2].classList.remove('hidden');
                             }
                         }
                         if (columnFour[1].innerHTML == 0) {
                             columnFour[1].innerHTML = columnFour[0].innerHTML;
                             columnFour[0].innerHTML = 0;
                             if (columnFour[1].innerHTML !=0 || columnFour[1].innerHTML !=undefined){
-                                columnFour[1].classList.remove('hidden')
+                                columnFour[1].classList.remove('hidden');
                             }
                         }  if (columnFour[0].innerHTML == 0 || columnFour[0].innerHTML ==undefined) {
-                                hideZero ()
+                                hideZero();
                         } 
                         }
                     } 
 
-    function slideDown (){
-        slideDown1 ();
-        slideDown2 ();  
-        slideDown3 ();
-        slideDown4 ();
+    function slideDown(){
+        slideDown1();
+        slideDown2();  
+        slideDown3();
+        slideDown4();
     }
    //////////////////////////////////////////////////////////////////////////////////////
 
@@ -326,154 +326,153 @@ function hideZero (){
     function row (){
         for(let i=0; i <cells.length; i++) {
             if (i <= 3){
-                rowOne.push(cells[i])
+                rowOne.push(cells[i]);
             } if (i <= 7 && i >=4) {
-                rowTwo.push(cells[i])
+                rowTwo.push(cells[i]);
             } if (i <=11 && i >= 8){
-                rowThree.push(cells[i])
+                rowThree.push(cells[i]);
             } if (i <=15 && i >=12) {
-                rowFour.push(cells[i])
+                rowFour.push(cells[i]);
             }     
         } 
-    } row ()
+    } row();
 
     //SLIDE LEFT FUNCTION AT LEFT ARROW KEY
 
-    document.addEventListener('keydown', keyLeft)
+    document.addEventListener('keydown', keyLeft);
 
     function keyLeft (event){
         if (event.keyCode === 37){
-            slideLeft ();
-            randomGenerate ();
+            slideLeft();
+            randomGenerate();
         }
     }
 
-    function slideLeft1 (){
+    function slideLeft1(){
         for (let i=0; i < rowOne.length; i++) {
            if (rowOne[0].innerHTML == 0){
                rowOne[0].innerHTML = rowOne[1].innerHTML;
                rowOne[1].innerHTML = 0;
                if (rowOne[0].innerHTML !=0 || rowOne[0].innerHTML != undefined){
-                   rowOne[0].classList.remove('hidden')
+                   rowOne[0].classList.remove('hidden');
                }
             } 
             if (rowOne[1].innerHTML == 0) {
                 rowOne[1].innerHTML = rowOne[2].innerHTML;
                 rowOne[2].innerHTML = 0;
                 if (rowOne[1].innerHTML !=0 || rowOne[1].innerHTML !=undefined){
-                    rowOne[1].classList.remove('hidden')
+                    rowOne[1].classList.remove('hidden');
                 }
             }
             if (rowOne[2].innerHTML == 0) {
                 rowOne[2].innerHTML = rowOne[3].innerHTML;
                 rowOne[3].innerHTML = 0;
                 if (rowOne[2].innerHTML !=0 || rowOne[2].innerHTML !=undefined){
-                    rowOne[2].classList.remove('hidden')
+                    rowOne[2].classList.remove('hidden');
                 }
             }  if (rowOne[3].innerHTML == 0 || rowOne[3].innerHTML ==undefined) {
-                    hideZero ()
-            } combineRow1 ();
+                    hideZero();
+            } combineRow1();
             }
         } 
     
-        function slideLeft2 (){
+        function slideLeft2(){
             for (let i=0; i < rowTwo.length; i++) {
                if (rowTwo[0].innerHTML == 0){
                    rowTwo[0].innerHTML = rowTwo[1].innerHTML;
                    rowTwo[1].innerHTML = 0;
                    if (rowTwo[0].innerHTML !=0 || rowTwo[0].innerHTML != undefined){
-                       rowTwo[0].classList.remove('hidden')
+                       rowTwo[0].classList.remove('hidden');
                    }
                 } 
                 if (rowTwo[1].innerHTML == 0) {
                     rowTwo[1].innerHTML = rowTwo[2].innerHTML;
                     rowTwo[2].innerHTML = 0;
                     if (rowTwo[1].innerHTML !=0 || rowTwo[1].innerHTML !=undefined){
-                        rowTwo[1].classList.remove('hidden')
+                        rowTwo[1].classList.remove('hidden');
                     }
                 }
                 if (rowTwo[2].innerHTML == 0) {
                     rowTwo[2].innerHTML = rowTwo[3].innerHTML;
                     rowTwo[3].innerHTML = 0;
                     if (rowTwo[2].innerHTML !=0 || rowTwo[2].innerHTML !=undefined){
-                        rowTwo[2].classList.remove('hidden')
+                        rowTwo[2].classList.remove('hidden');
                     }
                 }  if (rowTwo[3].innerHTML == 0 || rowTwo[3].innerHTML ==undefined) {
-                        hideZero ()
-                } 
+                        hideZero();
+                } combineRow2();
                 }
             } 
         
-            function slideLeft3 (){
+            function slideLeft3(){
                 for (let i=0; i < rowThree.length; i++) {
                    if (rowThree[0].innerHTML == 0){
                        rowThree[0].innerHTML = rowThree[1].innerHTML;
                        rowThree[1].innerHTML = 0;
                        if (rowThree[0].innerHTML !=0 || rowThree[0].innerHTML != undefined){
-                           rowThree[0].classList.remove('hidden')
+                           rowThree[0].classList.remove('hidden');
                        }
                     } 
                     if (rowThree[1].innerHTML == 0) {
                         rowThree[1].innerHTML = rowThree[2].innerHTML;
                         rowThree[2].innerHTML = 0;
                         if (rowThree[1].innerHTML !=0 || rowThree[1].innerHTML !=undefined){
-                            rowThree[1].classList.remove('hidden')
+                            rowThree[1].classList.remove('hidden');
                         }
                     }
                     if (rowThree[2].innerHTML == 0) {
                         rowThree[2].innerHTML = rowThree[3].innerHTML;
                         rowThree[3].innerHTML = 0;
                         if (rowThree[2].innerHTML !=0 || rowThree[2].innerHTML !=undefined){
-                            rowThree[2].classList.remove('hidden')
+                            rowThree[2].classList.remove('hidden');
                         }
                     }  if (rowThree[3].innerHTML == 0 || rowThree[3].innerHTML ==undefined) {
-                            hideZero ()
-                    } 
+                            hideZero();
+                    } combineRow3();
                     }
                 } 
             
-                function slideLeft4 (){
+                function slideLeft4(){
                     for (let i=0; i < rowFour.length; i++) {
                        if (rowFour[0].innerHTML == 0){
                            rowFour[0].innerHTML = rowFour[1].innerHTML;
                            rowFour[1].innerHTML = 0;
                            if (rowFour[0].innerHTML !=0 || rowFour[0].innerHTML != undefined){
-                               rowFour[0].classList.remove('hidden')
+                               rowFour[0].classList.remove('hidden');
                            }
                         } 
                         if (rowFour[1].innerHTML == 0) {
                             rowFour[1].innerHTML = rowFour[2].innerHTML;
                             rowFour[2].innerHTML = 0;
                             if (rowFour[1].innerHTML !=0 || rowFour[1].innerHTML !=undefined){
-                                rowFour[1].classList.remove('hidden')
+                                rowFour[1].classList.remove('hidden');
                             }
                         }
                         if (rowFour[2].innerHTML == 0) {
                             rowFour[2].innerHTML = rowFour[3].innerHTML;
                             rowFour[3].innerHTML = 0;
                             if (rowFour[2].innerHTML !=0 || rowFour[2].innerHTML !=undefined){
-                                rowFour[2].classList.remove('hidden')
+                                rowFour[2].classList.remove('hidden');
                             }
                         }  if (rowFour[3].innerHTML == 0 || rowFour[3].innerHTML ==undefined) {
-                                hideZero ()
-                        } 
+                                hideZero();
+                        } combineRow4();
                         }
                     } 
                 
                       
         
-    function slideLeft (){
-        slideLeft1 ();
-        slideLeft2 ();  
-        slideLeft3 ();
-        slideLeft4 ();
+    function slideLeft(){
+        slideLeft1();
+        slideLeft2();  
+        slideLeft3();
+        slideLeft4();
     }
 
     //In order for the tiles to move to the right with key press in the cells array cell[i] need to +1 until it reaches the end of the row [3], [7], [11], [15]
 
 
     document.addEventListener('keydown', keyRight);
-
 
     function keyRight (event) {
     if (event.keyCode === 39) {
@@ -510,59 +509,59 @@ function hideZero (){
         } 
     } 
 
-    function slideRight2 (){
+    function slideRight2(){
         for (let i=0; i < rowTwo.length; i++) {
            if (rowTwo[3].innerHTML == 0){
                rowTwo[3].innerHTML = rowTwo[2].innerHTML;
                rowTwo[2].innerHTML = 0;
                if (rowTwo[3].innerHTML !=0 || rowTwo[3].innerHTML != undefined){
-                   rowTwo[3].classList.remove('hidden')
+                   rowTwo[3].classList.remove('hidden');
                }
             } 
             if (rowTwo[2].innerHTML == 0) {
                 rowTwo[2].innerHTML = rowTwo[1].innerHTML;
                 rowTwo[1].innerHTML = 0;
                 if (rowTwo[2].innerHTML !=0 || rowTwo[2].innerHTML !=undefined){
-                    rowTwo[2].classList.remove('hidden')
+                    rowTwo[2].classList.remove('hidden');
                 }
             }
             if (rowTwo[1].innerHTML == 0) {
                 rowTwo[1].innerHTML = rowTwo[0].innerHTML;
                 rowTwo[0].innerHTML = 0;
                 if (rowTwo[1].innerHTML !=0 || rowTwo[1].innerHTML !=undefined){
-                    rowTwo[1].classList.remove('hidden')
+                    rowTwo[1].classList.remove('hidden');
                 }
             }  if (rowTwo[0].innerHTML == 0 || rowTwo[0].innerHTML ==undefined) {
-                hideZero ()
-            } 
+                hideZero();
+            } combineRow2();
             }
         } 
 
-        function slideRight3 (){
+        function slideRight3(){
             for (let i=0; i < rowThree.length; i++) {
                if (rowThree[3].innerHTML == 0){
                    rowThree[3].innerHTML = rowThree[2].innerHTML;
                    rowThree[2].innerHTML = 0;
                    if (rowThree[3].innerHTML !=0 || rowThree[3].innerHTML != undefined){
-                       rowThree[3].classList.remove('hidden')
+                       rowThree[3].classList.remove('hidden');
                    }
                 } 
                 if (rowThree[2].innerHTML == 0) {
                     rowThree[2].innerHTML = rowThree[1].innerHTML;
                     rowThree[1].innerHTML = 0;
                     if (rowThree[2].innerHTML !=0 || rowThree[2].innerHTML !=undefined){
-                        rowThree[2].classList.remove('hidden')
+                        rowThree[2].classList.remove('hidden');
                     }
                 }
                 if (rowThree[1].innerHTML == 0) {
                     rowThree[1].innerHTML = rowThree[0].innerHTML;
                     rowThree[0].innerHTML = 0;
                     if (rowThree[1].innerHTML !=0 || rowThree[1].innerHTML !=undefined){
-                        rowThree[1].classList.remove('hidden')
+                        rowThree[1].classList.remove('hidden');
                     }
                 }  if (rowThree[0].innerHTML == 0 || rowThree[0].innerHTML ==undefined) {
-                    hideZero ()
-                } 
+                    hideZero ();
+                } combineRow3();
                 }
             } 
  
@@ -572,51 +571,75 @@ function hideZero (){
                        rowFour[3].innerHTML = rowFour[2].innerHTML;
                        rowFour[2].innerHTML = 0;
                        if (rowFour[3].innerHTML !=0 || rowFour[3].innerHTML != undefined){
-                           rowFour[3].classList.remove('hidden')
+                           rowFour[3].classList.remove('hidden');
                        }
                     } 
                     if (rowFour[2].innerHTML == 0) {
                         rowFour[2].innerHTML = rowFour[1].innerHTML;
                         rowFour[1].innerHTML = 0;
                         if (rowFour[2].innerHTML !=0 || rowFour[2].innerHTML !=undefined){
-                            rowFour[2].classList.remove('hidden')
+                            rowFour[2].classList.remove('hidden');
                         }
                     }
                     if (rowFour[1].innerHTML == 0) {
                         rowFour[1].innerHTML = rowFour[0].innerHTML;
                         rowFour[0].innerHTML = 0;
                         if (rowFour[1].innerHTML !=0 || rowFour[1].innerHTML !=undefined){
-                            rowFour[1].classList.remove('hidden')
+                            rowFour[1].classList.remove('hidden');
                         }
                     }  if (rowFour[0].innerHTML == 0 || rowFour[0].innerHTML ==undefined) {
-                        hideZero ()
-                    } 
+                        hideZero();
+                    } combineRow4();
                     } 
                 } 
     
-function slideRight (){
-    slideRight1 ();
-    slideRight2 ();  
-    slideRight3 ();
-    slideRight4 ();
+function slideRight(){
+    slideRight1();
+    slideRight2();  
+    slideRight3();
+    slideRight4();
 }
 
 //4. If two matching tiles are slid together they combine to create a single new tiles with the sum of the two numbers combined
     
-    function combineRow1 () {
+    function combineRow1() {
         for (let i=0; i < 3; i++){
             if (rowOne[i].innerHTML === rowOne[i+1].innerHTML){
-                console.log(rowOne[i].innerHTML)
-                console.log(rowOne[i+1].innerHTML)
                 let total = parseInt(rowOne[i].innerHTML) + parseInt(rowOne[i+1].innerHTML)
-                console.log(total)
                 rowOne[i].innerHTML = total
-                console.log(rowOne[i].innerHTML)
                 rowOne[i+1].innerHTML = 0
             }
         }
-        
-        //if the tile to the right of the tile in the row is the same number that
+    }
+
+    function combineRow2() {
+        for (let i=0; i < 3; i++){
+            if (rowTwo[i].innerHTML === rowTwo[i+1].innerHTML){
+                let total = parseInt(rowTwo[i].innerHTML) + parseInt(rowTwo[i+1].innerHTML)
+                rowTwo[i].innerHTML = total
+                rowTwo[i+1].innerHTML = 0
+            }
+        }
+    }
+
+    function combineRow3() {
+        for (let i=0; i < 3; i++){
+            if (rowThree[i].innerHTML === rowThree[i+1].innerHTML){
+                let total = parseInt(rowThree[i].innerHTML) + parseInt(rowThree[i+1].innerHTML)
+                rowThree[i].innerHTML = total
+                rowThree[i+1].innerHTML = 0
+            }
+        }
+    }
+
+    function combineRow4() {
+        for (let i=0; i < 3; i++){
+            if (rowFour[i].innerHTML === rowFour[i+1].innerHTML){
+                let total = parseInt(rowFour[i].innerHTML) + parseInt(rowFour[i+1].innerHTML)
+                rowFour[i].innerHTML = total
+                rowFour[i+1].innerHTML = 0
+            }
+        }
     }
    
     
