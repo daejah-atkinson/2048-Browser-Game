@@ -924,6 +924,7 @@ function slideRight(){
     //if the gameboard is full and no more moves can be made loosing message appears
 
     let loser = document.querySelector('.loser')
+    let keepGoing = true;
 
     function loseCondition(){
         let tiles =0;
@@ -931,14 +932,90 @@ function slideRight(){
             if(cells[i].innerHTML == 0){
                 tiles++
             }
-        } if (tiles == 0){
-            loser.classList.add('show');
-            loser.classList.remove('loser');
-            document.removeEventListener('keydown', keyUp)
-            document.removeEventListener('keydown', keyRight)
-            document.removeEventListener('keydown', keyDown)
-            document.removeEventListener('keydown', keyLeft)
-        }
+        } if (tiles == 0 && keepGoing == true){
+            for(let i=0; i<3; i++){
+                 keepGoing = false;
+                if (rowOne[i].innerHTML == rowOne[i+1].innerHTML){
+                    keepGoing = true;
+                    console.log(keepGoing)
+                } if (rowTwo[i].innerHTML == rowTwo[i+1].innerHTML){
+                   console.log("keep going row 2")
+                   keepGoing = true;
+                   console.log(keepGoing)
+               }  if (rowThree[i].innerHTML == rowThree[i+1].innerHTML){
+                   console.log("keep going row 3")
+                   keepGoing = true;
+                   console.log(keepGoing)
+               }  if (rowFour[i].innerHTML == rowFour[i+1].innerHTML){
+                   console.log("keep going row 4")
+                   keepGoing = true;
+               }  if (columnOne[i].innerHTML == columnOne[i+1].innerHTML){
+                    console.log("keep going col 1")
+                    keepGoing = true;
+                    console.log(keepGoing)
+               }  if (columnTwo[i].innerHTML == columnTwo[i+1].innerHTML){
+                    console.log("keep going col 2")
+                    keepGoing = true;
+                    console.log(keepGoing)
+               }  if (columnThree[i].innerHTML == columnThree[i+1].innerHTML){
+                    console.log("keep going col 3")
+                    keepGoing = true;
+                   console.log(keepGoing)
+               }  if (columnFour[i].innerHTML == columnFour[i+1].innerHTML){
+                    console.log("keep going col 4")
+                    keepGoing = true;
+                    console.log(keepGoing)
+           } 
     }
 
+    } else if (keepGoing === false){
+        loser.classList.add('show');
+        loser.classList.remove('loser');
+        document.removeEventListener('keydown', keyUp)
+        document.removeEventListener('keydown', keyRight)
+        document.removeEventListener('keydown', keyDown)
+        document.removeEventListener('keydown', keyLeft)
+        return;
+      } else {
+          return;
+      }
+}
 
+
+//     function movesLeft() {
+//          keepGoing = 0;
+//         for(let i=0; i<3; i++){
+//             if (rowOne[i].innerHTML == rowOne[i+1].innerHTML){
+//                 keepGoing++;
+//                 console.log(keepGoing)
+//             } if (rowTwo[i].innerHTML == rowTwo[i+1].innerHTML){
+//                console.log("keep going row 2")
+//                keepGoing++;
+//                console.log(keepGoing)
+//            }  if (rowThree[i].innerHTML == rowThree[i+1].innerHTML){
+//                console.log("keep going row 3")
+//                keepGoing++;
+//                console.log(keepGoing)
+//            }  if (rowFour[i].innerHTML == rowFour[i+1].innerHTML){
+//                console.log("keep going row 4")
+//                keepGoing++;
+//            }  if (columnOne[i].innerHTML == columnOne[i+1].innerHTML){
+//                 console.log("keep going col 1")
+//                 keepGoing++;
+//                 console.log(keepGoing)
+//            }  if (columnTwo[i].innerHTML == columnTwo[i+1].innerHTML){
+//                 console.log("keep going col 2")
+//                 keepGoing++;
+//                 console.log(keepGoing)
+//            }  if (columnThree[i].innerHTML == columnThree[i+1].innerHTML){
+//                 console.log("keep going col 3")
+//                 keepGoing++;
+//                console.log(keepGoing)
+//            }  if (columnFour[i].innerHTML == columnFour[i+1].innerHTML){
+//                 console.log("keep going col 4")
+//                 keepGoing++;
+//                 console.log(keepGoing)
+
+//     } return keepGoing;
+// }
+// }
