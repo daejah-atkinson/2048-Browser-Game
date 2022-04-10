@@ -1048,4 +1048,11 @@ newGame.addEventListener('click', () => {
         randomGenerate()
 })
 
-//How to play
+//Disable arrow key courtesy of stack overflow
+//https://stackoverflow.com/questions/8916620/disable-arrow-key-scrolling-in-users-browser
+
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
