@@ -1,21 +1,21 @@
 .top-section {
-    /* border: 1px solid green; */
+    border: 1px solid green;
     height: 200px;
-    width: 100%;
+    width: 612px;
     display: flex;
     justify-content: flex-end;
+    margin: auto;
 }
 
 h1 {
     display: flex;
-    width: 100%;
-    /* border: 1px solid red; */
+    /* width: 100%; */
     justify-content: center;
     align-items: center;
     color: #2b4353;
     font-family: 'Rubik', sans-serif;
     font-size: 100px;
-    margin-left: 125px;
+    margin: auto;
 }
 
 .score {
@@ -33,6 +33,15 @@ h1 {
     font-size: 25px;
 }
 
+button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color:#a2a8d3;
+    border: 3px solid #38598b;
+    color: white;
+    width: 120px;
+}
+
 h3 {
     text-align: center;
 }
@@ -46,8 +55,8 @@ body {
 
 #gameboard {
     background-color: #e7eaf6;
-    width: 412px;
-    height: 412px;
+    width: 612px;
+    height: 612px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -55,8 +64,8 @@ body {
 }
 
 #gameboard > div {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border: 1.5px solid #2b4353;
     display: flex;
     justify-content: center;
