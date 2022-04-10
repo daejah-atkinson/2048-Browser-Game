@@ -18,6 +18,8 @@ function createGameboard(){
 } 
 createGameboard();
 
+
+
 //2. Game board starts out with two number 2 tiles
 //Create a function that randomly generates the number 2 on the board.
 //This function needs to randomly generate a positioning on the board (Number between1-16). It need to determine if that position is open (not already containing a number) If that position is open it need to place a number 2 tile.
@@ -46,6 +48,12 @@ function hideZero(){
         }
     }
 } hideZero();
+
+function transition() {
+    for(let i=0; i<cells.length; i++){
+        cells[i].classList.add('transition')
+    }
+} transition()
 
 //3. Player uses the arrow keys to slide the tiles on the board
     // Up arrow --> slides tiles up (keycode: 38)

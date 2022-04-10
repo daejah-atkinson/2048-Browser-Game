@@ -169,3 +169,7 @@ hr {
 .twenty-forty-eight {
     background-color: #abedd8; 
 }
+
+.transition {
+    transition: transform 1s;
+}
