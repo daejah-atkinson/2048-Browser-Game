@@ -1032,3 +1032,5 @@ newGame.addEventListener('click', () => {
         randomGenerate()
         randomGenerate()
 })
+
+//How to play

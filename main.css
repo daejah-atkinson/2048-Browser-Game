@@ -87,6 +87,22 @@ body {
     font-size: 35px;
     font-family: 'Rubik', sans-serif;
 }
+.bold{
+    font-weight: bold;
+}
+
+#how-to-play {
+    font-family: 'Rubik', sans-serif;
+    color: #2b4353;
+    margin: 45px auto;
+    width: 612px;
+
+}
+
+hr {
+    margin-top: 20px;
+    border: 1px solid #2b4353;
+}
 .hidden {
     color: #e7eaf6;
 }
