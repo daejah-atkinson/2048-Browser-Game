@@ -49,11 +49,15 @@ function hideZero(){
     }
 } hideZero();
 
+////////////////////////////////////////////////////////
+
 function transition() {
     for(let i=0; i<cells.length; i++){
         cells[i].classList.add('transition')
     }
 } transition()
+
+////////////////////////////////////////////////////////////
 
 //3. Player uses the arrow keys to slide the tiles on the board
     // Up arrow --> slides tiles up (keycode: 38)
@@ -1036,6 +1040,9 @@ newGame.addEventListener('click', () => {
     cells[i].innerHTML = 0
     cells[i].classList.remove("zero")
     }   
+        loser.classList.remove('show');
+        loser.classList.add('loser');
+        winner.classList.add('winner');
         hideZero()
         randomGenerate()
         randomGenerate()
