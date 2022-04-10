@@ -1,36 +1,51 @@
 .top-section {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     height: 200px;
     width: 612px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: auto;
 }
 
 h1 {
-    display: flex;
-    /* width: 100%; */
-    justify-content: center;
-    align-items: center;
     color: #2b4353;
     font-family: 'Rubik', sans-serif;
     font-size: 100px;
-    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.top-left {
+    display: block;
+}
+
+.instructions {
+    font-size: 18px;
+    margin-left: 5px;
+    color: #2b4353;
+    font-family: 'Rubik', sans-serif;
+}
+
+a:link {
+    color: #2b4353;
+}
+a:visited {
+    color: #2b4353;
 }
 
 .score {
     background-color:#a2a8d3;
     border: 3px solid #38598b;
     color: white;
-    width: 120px;
-    height: 100px;
-    justify-content: center;
+    width: 100px;
+    height: 80px;
     align-items: center;
+    justify-content: center;
     display: flex;
     font-family: 'Rubik', sans-serif;
-    margin-right: 30px;
+    margin-right: 10px;
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 30px;
+    text-align: center;
 }
 
 button {
@@ -39,11 +54,10 @@ button {
     background-color:#a2a8d3;
     border: 3px solid #38598b;
     color: white;
-    width: 120px;
-}
-
-h3 {
-    text-align: center;
+    width: 105px;
+    height: 40px;
+    font-size: 15px;
+    margin-right: 10px;
 }
 
 body {
@@ -59,7 +73,7 @@ body {
     height: 612px;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    margin: 25px auto;
     border: 1px solid #2b4353;
 }
 
@@ -70,7 +84,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Rubik', sans-serif;
 }
 .hidden {

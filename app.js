@@ -893,7 +893,7 @@ function slideRight(){
 
 
 //Total score with each move
-    let scoreboard = document.querySelector('h3')
+    let scoreboard = document.querySelector('.score')
 
     function scoring() {
         let sum = 0
@@ -1019,3 +1019,16 @@ function slideRight(){
 //     } return keepGoing;
 // }
 // }
+
+//New Game Button
+let newGame = document.querySelector('button')
+
+newGame.addEventListener('click', () => {
+    for (let i=0; i < cells.length; i++) {
+    cells[i].innerHTML = 0
+    cells[i].classList.remove("zero")
+    }   
+        hideZero()
+        randomGenerate()
+        randomGenerate()
+})
