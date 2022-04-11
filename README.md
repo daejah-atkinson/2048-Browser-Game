@@ -36,10 +36,7 @@
 
 ![Screen Shot 2022-04-11 at 10 59 24 AM](https://user-images.githubusercontent.com/99045660/162768043-f85f7c24-b2d7-4bcd-95de-c3b769c666a2.png)
 
-
-![Screen Shot 2022-04-11 at 10 58 11 AM](https://user-images.githubusercontent.com/99045660/162767770-55c01e07-51ac-4885-a5aa-81b6fa4b0ba0.png)
-
-
+![Screen Shot 2022-04-11 at 12 27 45 PM](https://user-images.githubusercontent.com/99045660/162786863-66454dd5-5512-42c9-b0ad-87545ece832a.png)
 
 <hr>
 
