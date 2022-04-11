@@ -42,7 +42,6 @@ h3 {
 .score {
     background-color:#a2a8d3;
     border: 3px solid #38598b;
-    border-radius: 5%;
     color: white;
     width: 100px;
     height: 80px;
@@ -62,7 +61,6 @@ button {
     margin-top: 20px;
     background-color:#a2a8d3;
     border: 3px solid #38598b;
-    border-radius: 5%;
     color: white;
     width: 105px;
     height: 40px;

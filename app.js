@@ -18,8 +18,6 @@ function createGameboard(){
 } 
 createGameboard();
 
-
-
 //2. Game board starts out with two number 2 tiles
 //Create a function that randomly generates the number 2 on the board.
 //This function needs to randomly generate a positioning on the board (Number between1-16). It need to determine if that position is open (not already containing a number) If that position is open it need to place a number 2 tile.
@@ -984,8 +982,6 @@ function slideRight(){
           return;
       }
 }
-
-
 
 //New Game Button
 let newGame = document.querySelector('button')
