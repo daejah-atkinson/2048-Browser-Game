@@ -49,14 +49,6 @@ function hideZero(){
     }
 } hideZero();
 
-////////////////////////////////////////////////////////
-
-function transition() {
-    for(let i=0; i<cells.length; i++){
-        cells[i].classList.add('transition')
-    }
-} transition()
-
 ////////////////////////////////////////////////////////////
 
 //3. Player uses the arrow keys to slide the tiles on the board
@@ -1005,6 +997,7 @@ newGame.addEventListener('click', () => {
     }   
         loser.classList.remove('show');
         loser.classList.add('loser');
+        winner.classList.add('winner')
         document.addEventListener('keydown', keyUp)
         document.addEventListener('keydown', keyRight)
         document.addEventListener('keydown', keyDown)
