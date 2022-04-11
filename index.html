@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
 
     <title>2048</title>
 </head>
@@ -22,7 +23,7 @@
             <div class="score"><h3>Score</h3></div>
             <button type="button">New Game</button>
         </div>
-    </section>
+    </section class="message">
     <div class="winner"><h3>Congratulations! You've won!</h3></div>
     <div class="loser"><h3>Sorry, you've lost. Try again.</h3></div>
     
@@ -32,8 +33,9 @@
     
 
     <div id="how-to-play">
-        <span class="bold">HOW TO PLAY:</span> Slide the tiles on the board using the arrow keys. Tiles with the same number will merge into one when combined. Add the tiles until you reach 2048. <a href="#gameboard">Start playing &rarr; </a> <hr>
+        <span class="bold">HOW TO PLAY:</span> Slide the tiles on the board using the arrow keys. Tiles with the same number will merge into one when combined. Add the tiles until you reach 2048. <a href="#gameboard"> <span class="bold">Start playing &rarr;</span></a> <hr>
     </div>
+    <div class="credit"> This game is based off of the original version of 2048 created by Gabriele Cirulli.</div>
     
 <script src="app.js"></script>
 </body>

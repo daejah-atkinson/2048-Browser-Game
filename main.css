@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     margin: 40px auto;
+    font-weight: 400;
 }
 
 h1 {
@@ -13,9 +14,11 @@ h1 {
     font-size: 100px;
     margin-top: 20px;
     margin-bottom: 0;
+    font-weight: 400;
 }
 .top-left {
     display: block;
+    font-weight: 400;
 }
 
 .instructions {
@@ -23,6 +26,7 @@ h1 {
     margin-left: 5px;
     color: #2b4353;
     font-family: 'Rubik', sans-serif;
+    font-weight: 400;
 }
 
 a:link {
@@ -46,6 +50,7 @@ a:visited {
     margin-top: 20px;
     font-size: 30px;
     text-align: center;
+    font-weight: 400;
 }
 
 button {
@@ -58,6 +63,7 @@ button {
     height: 40px;
     font-size: 15px;
     margin-right: 10px;
+    font-weight: 400;
 }
 
 body {
@@ -65,6 +71,9 @@ body {
     width: 100%;
     margin: auto;
     background-color: #ececec;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+   
 }
 
 #gameboard {
@@ -75,6 +84,7 @@ body {
     flex-wrap: wrap;
     margin: 25px auto;
     border: 2px solid #2b4353;
+    font-weight: 400;
 }
 
 #gameboard > div {
@@ -88,7 +98,7 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 .bold{
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #how-to-play {
@@ -96,14 +106,27 @@ body {
     color: #2b4353;
     margin: 45px auto;
     width: 612px;
+    font-weight: 400;
 }
 
 hr {
     margin-top: 20px;
     border: 1px solid #2b4353;
 }
+
+.credit {
+    font-family: 'Rubik', sans-serif;
+    color: #2b4353;
+    margin: 20px auto;
+    width: 612px;
+}
 .hidden {
     color: #e7eaf6;
+}
+
+.message {
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
 }
 
 .winner {
@@ -117,6 +140,7 @@ hr {
     color: #2b4353;
     font-family: 'Rubik', sans-serif;
     text-align: center;
+    font-weight: 400;
 }
 
 .zero {
@@ -210,6 +234,10 @@ hr {
     }
 
     #how-to-play {
+        width: 316px;
+    }
+
+    .credit{
         width: 316px;
     }
  

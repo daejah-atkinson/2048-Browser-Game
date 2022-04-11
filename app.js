@@ -945,8 +945,8 @@ function slideRight(){
                 tiles++
             }
         } if (tiles == 0 && keepGoing == true){
+                keepGoing = false;
             for(let i=0; i<3; i++){
-                 keepGoing = false;
                 if (rowOne[i].innerHTML == rowOne[i+1].innerHTML){
                     keepGoing = true;
                     console.log(keepGoing)
@@ -978,7 +978,7 @@ function slideRight(){
                     keepGoing = true;
                     console.log(keepGoing)
            } 
-    }
+    } 
 
     } else if (keepGoing === false){
         loser.classList.add('show');
@@ -994,43 +994,6 @@ function slideRight(){
 }
 
 
-//     function movesLeft() {
-//          keepGoing = 0;
-//         for(let i=0; i<3; i++){
-//             if (rowOne[i].innerHTML == rowOne[i+1].innerHTML){
-//                 keepGoing++;
-//                 console.log(keepGoing)
-//             } if (rowTwo[i].innerHTML == rowTwo[i+1].innerHTML){
-//                console.log("keep going row 2")
-//                keepGoing++;
-//                console.log(keepGoing)
-//            }  if (rowThree[i].innerHTML == rowThree[i+1].innerHTML){
-//                console.log("keep going row 3")
-//                keepGoing++;
-//                console.log(keepGoing)
-//            }  if (rowFour[i].innerHTML == rowFour[i+1].innerHTML){
-//                console.log("keep going row 4")
-//                keepGoing++;
-//            }  if (columnOne[i].innerHTML == columnOne[i+1].innerHTML){
-//                 console.log("keep going col 1")
-//                 keepGoing++;
-//                 console.log(keepGoing)
-//            }  if (columnTwo[i].innerHTML == columnTwo[i+1].innerHTML){
-//                 console.log("keep going col 2")
-//                 keepGoing++;
-//                 console.log(keepGoing)
-//            }  if (columnThree[i].innerHTML == columnThree[i+1].innerHTML){
-//                 console.log("keep going col 3")
-//                 keepGoing++;
-//                console.log(keepGoing)
-//            }  if (columnFour[i].innerHTML == columnFour[i+1].innerHTML){
-//                 console.log("keep going col 4")
-//                 keepGoing++;
-//                 console.log(keepGoing)
-
-//     } return keepGoing;
-// }
-// }
 
 //New Game Button
 let newGame = document.querySelector('button')
@@ -1042,7 +1005,11 @@ newGame.addEventListener('click', () => {
     }   
         loser.classList.remove('show');
         loser.classList.add('loser');
-        winner.classList.add('winner');
+        document.addEventListener('keydown', keyUp)
+        document.addEventListener('keydown', keyRight)
+        document.addEventListener('keydown', keyDown)
+        document.addEventListener('keydown', keyLeft)
+        keepGoing = true;
         hideZero()
         randomGenerate()
         randomGenerate()
