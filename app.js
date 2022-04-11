@@ -1002,6 +1002,8 @@ newGame.addEventListener('click', () => {
         hideZero()
         randomGenerate()
         randomGenerate()
+        sum = 0;
+        scoreboard.innerHTML = `Score ${sum}`;
 })
 
 //Disable arrow key courtesy of stack overflow
@@ -1012,3 +1014,12 @@ window.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
+
+//How to play
+
+let howToPlay = document.querySelector('.play')
+let box = document.querySelector('#how-to-play')
+
+    howToPlay.addEventListener('click', () => {
+        box.classList.toggle('transition')
+    })

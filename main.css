@@ -110,11 +110,21 @@ body {
     margin: 45px auto;
     width: 612px;
     font-weight: 400;
+    transition-duration: 2s;
+    transition-property: border padding;  
+}
+
+.transition {
+    border: 3px solid #38598b;
+    padding: 10px;
+    transition-duration: 1s;
+    transition-property: border padding;  
 }
 
 hr {
     margin-top: 20px;
     border: 1px solid #2b4353;
+    width: 612px
 }
 
 .credit {
@@ -197,9 +207,7 @@ hr {
     background-color: #abedd8; 
 }
 
-.transition {
-    transition: transform 1s;
-}
+
 
 @media screen and (max-width: 600px) {
     .top-section {
@@ -243,6 +251,10 @@ hr {
 
     .credit{
         width: 316px;
+    }
+
+    hr {
+        width: 316px
     }
  
     
