@@ -1,5 +1,4 @@
 .top-section {
-    /* border: 1px solid green; */
     height: 200px;
     width: 612px;
     display: flex;
@@ -70,7 +69,6 @@ button {
 }
 
 body {
-    /* border: 1px solid orange; */
     width: 100%;
     margin: auto;
     background-color: #ececec;
