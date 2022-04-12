@@ -667,7 +667,7 @@ function slideRight(){
         }
     }
    
-    //////////////////////////////////////
+    //Combine columns//////////////////////////////////////
 
     function combineColumn1() {
         for (let i=0; i < 3; i++){
@@ -923,7 +923,7 @@ function slideRight(){
         } 
     }
 //6. When game board is full and no more moves can be made
-    //if the gameboard is full and no more moves can be made loosing message appears
+    //if the gameboard is full and no more moves can be made losing message appears
 
     let loser = document.querySelector('.loser')
     let keepGoing = true;
@@ -986,6 +986,7 @@ newGame.addEventListener('click', () => {
         hideZero()
         randomGenerate()
         randomGenerate()
+        score = [];
         sum = 0;
         scoreboard.innerHTML = `Score ${sum}`;
 })
