@@ -939,34 +939,20 @@ function slideRight(){
             for(let i=0; i<3; i++){
                 if (rowOne[i].innerHTML == rowOne[i+1].innerHTML){
                     keepGoing = true;
-                    console.log(keepGoing)
                 } if (rowTwo[i].innerHTML == rowTwo[i+1].innerHTML){
-                   console.log("keep going row 2")
                    keepGoing = true;
-                   console.log(keepGoing)
-               }  if (rowThree[i].innerHTML == rowThree[i+1].innerHTML){
-                   console.log("keep going row 3")
+                }  if (rowThree[i].innerHTML == rowThree[i+1].innerHTML){
                    keepGoing = true;
-                   console.log(keepGoing)
-               }  if (rowFour[i].innerHTML == rowFour[i+1].innerHTML){
-                   console.log("keep going row 4")
+                }  if (rowFour[i].innerHTML == rowFour[i+1].innerHTML){
                    keepGoing = true;
-               }  if (columnOne[i].innerHTML == columnOne[i+1].innerHTML){
-                    console.log("keep going col 1")
+                }  if (columnOne[i].innerHTML == columnOne[i+1].innerHTML){
                     keepGoing = true;
-                    console.log(keepGoing)
-               }  if (columnTwo[i].innerHTML == columnTwo[i+1].innerHTML){
-                    console.log("keep going col 2")
+                }  if (columnTwo[i].innerHTML == columnTwo[i+1].innerHTML){
                     keepGoing = true;
-                    console.log(keepGoing)
-               }  if (columnThree[i].innerHTML == columnThree[i+1].innerHTML){
-                    console.log("keep going col 3")
+                }  if (columnThree[i].innerHTML == columnThree[i+1].innerHTML){
                     keepGoing = true;
-                   console.log(keepGoing)
-               }  if (columnFour[i].innerHTML == columnFour[i+1].innerHTML){
-                    console.log("keep going col 4")
+                }  if (columnFour[i].innerHTML == columnFour[i+1].innerHTML){
                     keepGoing = true;
-                    console.log(keepGoing)
            } 
     } 
 
@@ -978,9 +964,7 @@ function slideRight(){
         document.removeEventListener('keydown', keyDown)
         document.removeEventListener('keydown', keyLeft)
         return;
-      } else {
-          return;
-      }
+      } 
 }
 
 //New Game Button
