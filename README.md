@@ -31,6 +31,8 @@
 
 <h2> Getting Started </h2>
 
+<p> Click on the link to play: https://daejah-atkinson.github.io/2048-Browser-Game/ </p>
+
 <hr>
 
 
@@ -39,4 +41,5 @@
 <ul>
   <li>Allow for user to continue playing the game past 2048</li>
   <li>Allow for user to choose the colors of their game tiles based off of theme packages</li>
+  <li>Animate the tiles so they appear to be sliding on the board</li>
   </ul>
